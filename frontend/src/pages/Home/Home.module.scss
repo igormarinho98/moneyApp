@@ -1,0 +1,36 @@
+.Home {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+
+
+.Central {
+    background-color: #e78457;
+    text-align: center;
+    padding: 30px;
+    color: #FFF;
+    justify-content: flex-end;
+    align-items: end;
+    display: block;
+ 
+
+    li {
+        padding-top: 10%    ;
+        list-style: none;
+    }
+
+    h1 {
+        max-width: 70%;
+        display: inline-block;
+    }
+
+    a {
+        text-decoration: none;
+        color: #631406;
+        font-weight: bold;
+    }
+}
