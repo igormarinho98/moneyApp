@@ -36,10 +36,10 @@ import { CardContent } from "@mui/material";
             <CardContent>
           <li className={styles.main} key={dado._id as any}>
               <div >
-                <p className={styles.linha}>User ID: {dado.user_id}</p>
-                <p>Agency: {dado.agency}</p>
-                <p>Account Number: {dado.account_number}</p>
-                <p>Balance: {dado.balance.$numberDecimal}</p>
+                <p key={dado.user_id} className={styles.linha}>User ID: {dado.user_id}</p>
+                <p key={dado.agency} >Agency: {dado.agency}</p>
+                <p key={dado.account_number}>Account Number: {dado.account_number}</p>
+                <p key={dado.balance.$numberDecimal} >Balance: {dado.balance.$numberDecimal}</p>
                </div>
             </li>
         </CardContent>

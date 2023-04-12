@@ -1,19 +1,30 @@
 import IAccount from "../../interfaces/IAccount";
 import NavBar from "../Navbar";
+import styles from "./Account.module.scss";
+import CreateAccount from "../CreateAccount";
+import { Card, CardContent, Paper } from "@mui/material";
 
-    interface AccountProps {
-        account?: IAccount
-    }
+interface AccountProps {
+    account?: IAccount
+}
 
 
-    const Account = ({ account } : AccountProps) => {
-        return (
-            <div>
-                <NavBar/>
-                <h2>Account Managament</h2>
+const AccountX = ({ account }: AccountProps) => {
+    return (
+        <div className={styles.main}>
 
-            </div>
-        )
-    }
+            <Card>
+                <CardContent>
 
-    export default Account;
+                    <Paper>
+                        <NavBar />
+                        <CreateAccount />
+                    </Paper>
+                </CardContent>
+            </Card>
+
+        </div>
+    )
+}
+
+export default AccountX;

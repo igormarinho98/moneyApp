@@ -7,7 +7,7 @@ const NavBar = () => {
     return (
         <>
          <Alert variant="filled" severity="success">
-          Invest
+          WEBvest
         </Alert>
 
         <Breadcrumbs aria-label="Menu">
@@ -30,6 +30,7 @@ const NavBar = () => {
     Users
   </Link>
 </Breadcrumbs>
+<h2>Account Managament</h2>
 
         </>
 );
