@@ -1,9 +1,9 @@
-import { mongoose } from "mongoose";
-import User from "./User.js";
+  import { mongoose } from "mongoose";
+  import User from "./User.js";
 
-const Schema = mongoose.Schema;
+  const Schema = mongoose.Schema;
 
-const accountSchema = new Schema({
+  const accountSchema = new Schema({
 
      
     user_id: {type: mongoose.Schema.Types.ObjectId, ref: 'User',  required: true},
@@ -15,6 +15,6 @@ const accountSchema = new Schema({
 });
 
 
-const Account = mongoose.model('Account', accountSchema);
+  const Account = mongoose.model('Account', accountSchema);
 
-export default Account;
+  export default Account;

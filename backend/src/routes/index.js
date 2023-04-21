@@ -1,7 +1,7 @@
 import express from "express";
 import account from "./accountRoutes.js"
-import userRoutes from "./userRoutes.js";
- 
+import user from "./userRoutes.js";
+import application from "./applicationRoutes.js";
 
 const routes = (app) => {
     app.route("/").get((req, res) => {
@@ -13,7 +13,8 @@ const routes = (app) => {
     app.use(
         express.json(),
         account,
-        userRoutes,
+        user,
+        application
      )
 
 }

@@ -3,11 +3,15 @@
   import Card from '@mui/material/Card';
 
   import styles from "./ListAccounts.module.scss";
+
  
   import IAccount from "../../interfaces/IAccount";
 import { CardContent } from "@mui/material";
 
    const url = 'http://localhost:3000/account';
+
+
+  
   
     const ListAccount = () => {
 
@@ -27,26 +31,28 @@ import { CardContent } from "@mui/material";
     return (  
       <div>
 
-
+ 
 
 
          <ul>
         {accounts.map(dado => (
-            <Card sx={{ minWidth: 275}} color="text-secondary">
+            <Card sx={{  bgcolor: "text.disabled", minWidth: 100 }}  >
             <CardContent>
-          <li className={styles.main} key={dado._id as any}>
               <div >
+                <li className={styles.main} key={dado._id as any}>
                 <p key={dado.user_id} className={styles.linha}>User ID: {dado.user_id}</p>
-                <p key={dado.agency} >Agency: {dado.agency}</p>
-                <p key={dado.account_number}>Account Number: {dado.account_number}</p>
-                <p key={dado.balance.$numberDecimal} >Balance: {dado.balance.$numberDecimal}</p>
-               </div>
+                <li key={dado.agency} >Agency: {dado.agency}</li>
+                <li key={dado.account_number}>Account Number: {dado.account_number}</li>
+                <li key={dado.balance.$numberDecimal} >Balance: {dado.balance.$numberDecimal}</li>
+                <li key={dado.created_at} >Created: {dado.created_at}</li>
+                
             </li>
+               </div>
         </CardContent>
           </Card>
           ))} 
         </ul>
-      </div>
+       </div>
     );
 
           }
