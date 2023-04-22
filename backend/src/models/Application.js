@@ -6,11 +6,14 @@
     const appSchema = Schema ({
 
     user_id: {type: mongoose.Schema.Types.ObjectId, ref: 'User',  required: true},
-    idApp: {type: mongoose.Schema.Types.ObjectId, auto: true },
+    application: {type: mongoose.Schema.Types.ObjectId, auto: true },
     applicated_at: {type: Date, default: Date.now},
     type: {type: String, required:true},
     value: {type: mongoose.Types.Decimal128, required: true },
-    currency: {type: String, required: true}
+    currency: {type: String, required: true},
+    expiration: {type: Boolean, default: false},
+    expiration_date: {type: Date, default: Date.now},
+    flag_redemption: {type: Boolean, default: false}
 
   });
 
