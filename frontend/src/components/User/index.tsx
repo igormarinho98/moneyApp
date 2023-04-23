@@ -1,7 +1,7 @@
  import IUser from "../../interfaces/IUser";
  import ListUsers from "../ListUsers";
  import NavBar from "../Navbar";
-
+import CreateUser from "../CreateUser";
  
   interface UserProps {
     user?: IUser
@@ -13,6 +13,7 @@
     return (
         <div>
           <NavBar/>
+          <CreateUser/>
           <ListUsers/>
         </div>
     )

@@ -1,9 +1,8 @@
 import { TextField, FormControl, InputLabel, Input, InputAdornment, Grid, Button, Hidden } from "@mui/material";
 import styles from "./CreateAccount.module.scss";
 import axios from "axios";
- import React, { useEffect, useState } from "react";
-import { response } from "express";
-
+ import React, { useState } from "react";
+ 
 
 const url = 'http://localhost:3000/account';
 
