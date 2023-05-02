@@ -19,11 +19,11 @@ const AccountX = ({ account }: AccountProps) => {
                     <Paper>
                         <NavBar />
                         <CreateAccount />
+                        
                     </Paper>
                 </CardContent>
             </Card>
-
-        </div>
+         </div>
     )
 }
 

@@ -29,6 +29,13 @@ const NavBar = () => {
     >
     Users
   </Link>
+  <Link
+    underline="hover"
+    color="inherit"
+    href="/applications"
+    >
+    Applications
+  </Link>
 </Breadcrumbs>
 <h2>Account Managament</h2>
 

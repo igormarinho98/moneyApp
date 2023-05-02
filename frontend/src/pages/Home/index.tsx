@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./Home.module.scss";
 import NavBar from "../../components/Navbar";
+import ModalList from "../../components/ModalList";
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
             </ul>
 
         </div>
+        <ModalList/>
         </>
     )
 }

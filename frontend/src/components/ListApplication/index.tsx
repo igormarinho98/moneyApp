@@ -25,32 +25,29 @@ const ListApplication = () => {
     return (
 
         <>
-            <ul>
-                {applications.map(item => (
+                 {applications.map(item => (
                     <Card sx={{ minWidth: 275 }} color="text-secondary">
-                        <h2>{item.application} {item.type}</h2>
+                        <h2> {item.type}</h2>
+                          <h3> {item.application} </h3> 
                         <CardContent>
-                            <li key={item._id as any}>
-                                <div >
+                                 <div >
                                     <p>App ID: {item._id}</p>
                                     <p>Moeda: {item.currency}</p>
 
                                     <p>Valor: {item.value?.$numberDecimal}</p>
-                                    <p>Vencimento: {item.expiration}</p>
+                                    <p>Vencimento: {item.expiration || "FALSE"}</p>
 
                                     <p>Aplicado: {item.applicated_at}</p>
                                     <p>Data de Vencimento: {item.expiration_date}</p>
 
-                                    <p>Resgatado: {item.flag_redemption}</p>
+                                    <p>Resgatado: {item.flag_redemption || "FALSE"}</p>
 
-
+  
                                 </div>
-                            </li>
                         </CardContent>
                     </Card>
                 ))}
-            </ul>
-        </>
+         </>
     )
 
 }

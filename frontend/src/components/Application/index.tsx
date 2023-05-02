@@ -1,4 +1,6 @@
 import IApp from "../../interfaces/IApp";
+import ListApplication from "../ListApplication";
+import NavBar from "../Navbar";
 
   interface AppProps {
     app?: IApp
@@ -7,8 +9,9 @@ import IApp from "../../interfaces/IApp";
 const Application = () => {
     return (
         <>
-        <h1>tete</h1>
-        </>
+        <NavBar></NavBar>
+          <ListApplication/>
+         </>
     )
 }
 

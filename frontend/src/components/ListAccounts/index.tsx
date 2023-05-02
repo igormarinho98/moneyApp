@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Card from '@mui/material/Card';
-
+import Button from "@mui/material";
 import styles from "./ListAccounts.module.scss";
 
 
@@ -26,7 +26,7 @@ const ListAccount = () => {
         console.log(err)
       })
 
-  }, [accounts]);
+  }, [accounts]); 
 
   return (
     <div>
@@ -39,13 +39,14 @@ const ListAccount = () => {
           <Card sx={{ bgcolor: "text.disabled", minWidth: 100 }}  >
             <CardContent>
               <div >
-                <li className={styles.main} key={dado._id as any}>
-                  <p key={dado.user_id} className={styles.linha}>User ID: {dado.user_id}</p>
+                <li className={styles.main} key={dado._id as any}> Account ID: {dado._id }
                   <li key={dado.agency} >Agency: {dado.agency}</li>
                   <li key={dado.account_number}>Account Number: {dado.account_number}</li>
                   <li key={dado.balance.$numberDecimal} >Balance: {dado.balance.$numberDecimal}</li>
                   <li key={dado.created_at} >Created: {dado.created_at}</li>
-
+                  <p key={dado.user_id} className={styles.linha}>User ID: {dado.user_id}</p>
+                  <p>Actions:</p>
+ 
                 </li>
               </div>
             </CardContent>

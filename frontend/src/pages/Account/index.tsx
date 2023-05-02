@@ -1,5 +1,7 @@
 import React from "react";
 import styles from "./Account.module.scss";
+ 
+
 import ListAccount from "../../components/ListAccounts";
 import Paper from '@mui/material/Paper';
 import Account from "../../components/Account";
@@ -12,10 +14,11 @@ import Account from "../../components/Account";
           <Account/>
          
         <h1 className={styles.header}>by Igor Leonardo</h1>
-        <Paper variant="outlined" elevation={3  } >
+        <Paper variant="outlined" elevation={0} >
         <ListAccount />
        
         </Paper>
+        
         </div>
     )
   }
