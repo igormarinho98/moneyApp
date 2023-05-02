@@ -11,7 +11,7 @@ import Account from "../../components/Account";
   function App() {
     return (
         <div className={styles.main}>
-          <Account/>
+        <Account/>
          
         <h1 className={styles.header}>by Igor Leonardo</h1>
         <Paper variant="outlined" elevation={0} >

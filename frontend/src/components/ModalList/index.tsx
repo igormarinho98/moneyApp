@@ -13,7 +13,7 @@ import AddIcon from '@mui/icons-material/Add';
 import Typography from '@mui/material/Typography';
 import { blue } from '@mui/material/colors';
 
-const enviroments = ['HML', 'PROD', 'DEV'];
+const enviroments = ['HML Enviroment', 'PROD Enviroment', 'DEV Enviroment'];
 
 
 export interface SimpleDialogProps {
@@ -35,7 +35,7 @@ function SimpleDialog(props: SimpleDialogProps) {
 
   return (
     <Dialog onClose={handleClose} open={open}>
-      <DialogTitle>Set backup account</DialogTitle>
+      <DialogTitle>Set Enviroment</DialogTitle>
       <List sx={{ pt: 0 }}>
         {enviroments.map((env) => (
           <ListItem disableGutters>

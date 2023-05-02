@@ -1,1 +1,47 @@
- 
+.main {
+    margin-left: 3px;
+
+
+    list-style: none;
+    
+    grid-area: tarefas;
+    height: 100%;
+  
+    h2 {
+      font-size: 1.25rem;
+      margin-bottom: 12px;
+            
+    }
+
+
+    li {
+        font-size: 1.25rem;
+    }
+
+    p {
+        font-size: 1.25rem;
+        margin-bottom: 12px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, Times, serif;
+    }
+  
+    ul {
+      max-height: 350px;
+      overflow-y: scroll;
+        scrollbar-width: thin;
+    }
+  
+    @media screen and (min-width:1280px) {
+      
+      h2{
+         
+        font-size: 2.25rem;
+        margin-bottom: 24px;
+      }
+  
+      ul {
+        overflow: auto;
+        max-height: 500px;
+      }
+    }
+  
+}

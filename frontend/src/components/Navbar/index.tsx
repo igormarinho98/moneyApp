@@ -12,14 +12,14 @@ const NavBar = () => {
 
         <Breadcrumbs aria-label="Menu">
   <Link underline="hover" color="inherit" href="/">
-    Home
+    Início
   </Link>
   <Link
     underline="hover"
     color="inherit"
     href="/accounts"
     >
-    Accounts
+    Gestão de Contas
   </Link>
 
   <Link
@@ -27,17 +27,17 @@ const NavBar = () => {
     color="inherit"
     href="/users"
     >
-    Users
+    Gestão de Usuários
   </Link>
   <Link
     underline="hover"
     color="inherit"
     href="/applications"
     >
-    Applications
+    Aplicações
   </Link>
 </Breadcrumbs>
-<h2>Account Managament</h2>
+<h2>Sistema de Conta Corrente</h2>
 
         </>
 );

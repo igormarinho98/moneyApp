@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import styles from "./Home.module.scss";
 import NavBar from "../../components/Navbar";
 import ModalList from "../../components/ModalList";
+import IntegrationNotistack from "../../components/Notification";
 
 
 function App() {
@@ -12,13 +13,14 @@ function App() {
         <div className={styles.Home}>
 
             <ul className={styles.Central}>
-            <h1>NEW TEST</h1>
+            <h1>webvest</h1>
              
 
             </ul>
 
         </div>
         <ModalList/>
+        <IntegrationNotistack    />
         </>
     )
 }

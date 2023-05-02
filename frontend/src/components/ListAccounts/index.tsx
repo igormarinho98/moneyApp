@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Card from '@mui/material/Card';
-import Button from "@mui/material";
+import Button from "@mui/material/Button";
 import styles from "./ListAccounts.module.scss";
-
+ 
 
 import IAccount from "../../interfaces/IAccount";
 import { CardContent } from "@mui/material";
@@ -36,17 +36,19 @@ const ListAccount = () => {
 
       <ul>
         {accounts.map(dado => (
-          <Card sx={{ bgcolor: "text.disabled", minWidth: 100 }}  >
+          <Card sx={{  minWidth: 275 }} color="text-secondary"  >
             <CardContent>
               <div >
-                <li className={styles.main} key={dado._id as any}> Account ID: {dado._id }
-                  <li key={dado.agency} >Agency: {dado.agency}</li>
-                  <li key={dado.account_number}>Account Number: {dado.account_number}</li>
-                  <li key={dado.balance.$numberDecimal} >Balance: {dado.balance.$numberDecimal}</li>
-                  <li key={dado.created_at} >Created: {dado.created_at}</li>
+                <li className={styles.main} key={dado._id as any}>  ID Conta: {dado._id }
+                  <p key={dado.agency} >Agencia: {dado.agency}</p>
+                  <p key={dado.account_number}>Conta: {dado.account_number}</p>
+                  <p key={dado.balance.$numberDecimal} >Saldo: {dado.balance.$numberDecimal}</p>
+                  <p key={dado.created_at} >Criado: {dado.created_at}</p>
                   <p key={dado.user_id} className={styles.linha}>User ID: {dado.user_id}</p>
-                  <p>Actions:</p>
- 
+                <li><Button color="warning" variant="contained">Editar</Button></li>
+                  <li><Button color="error" variant="contained">Excluir</Button></li>
+
+
                 </li>
               </div>
             </CardContent>

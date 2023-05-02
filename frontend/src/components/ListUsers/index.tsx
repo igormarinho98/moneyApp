@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
-import { Card, CardContent } from "@mui/material";
+import { Card, CardContent, Button } from "@mui/material";
 import styles from "./ListUsers.module.scss";
   
 import IUser from "../../interfaces/IUser";
@@ -38,6 +38,8 @@ const ListUsers = () => {
        <p>Email: {dado.email}</p>
        <p>Password: {dado.password}</p>
        <p>Created: {dado.created_at}</p>
+       <li><Button color="warning" variant="contained">Editar</Button></li>
+    <li><Button color="error" variant="contained">Excluir</Button></li>
 
        
       </div>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Card, CardContent } from "@mui/material";
 import IApp from "../../interfaces/IApp";
+import styles from "./ListApplication.module.scss";
 
 
 const url = 'http://localhost:3000/application';
@@ -30,7 +31,7 @@ const ListApplication = () => {
                         <h2> {item.type}</h2>
                           <h3> {item.application} </h3> 
                         <CardContent>
-                                 <div >
+                                 <div className={styles.main} >
                                     <p>App ID: {item._id}</p>
                                     <p>Moeda: {item.currency}</p>
 

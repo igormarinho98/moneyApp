@@ -42,7 +42,7 @@ const CreateUser = () => {
         <>
             <div className={styles.main}>
 
-                <h3>Tela de Criação de Conta</h3>
+                <h3>Tela de Criação de Usuários</h3>
                 <form onSubmit={handleSubmit}>
 
                     <Grid container spacing={2}>
@@ -52,7 +52,7 @@ const CreateUser = () => {
                                 value={username}
                                 onChange={(e) => setUsername(e.target.value)}
                                 id="filled-basic"
-                                label="Username"
+                                label="Nickname"
                                 variant="filled"
                                 margin="dense" />
                         </Grid>
@@ -63,7 +63,7 @@ const CreateUser = () => {
                                 value={firstname}
                                 onChange={(e) => setFName(e.target.value)}
                                 id="filled-basic"
-                                label="First Name"
+                                label="Nome"
                                 variant="filled"
                                 margin="dense" />
                         </Grid>
@@ -74,7 +74,7 @@ const CreateUser = () => {
                                 value={lastname}
                                 onChange={(e) => setLName(e.target.value)}
                                 id="filled-basic"
-                                label="Last Name"
+                                label="Sobrenome"
                                 variant="filled"
                                 margin="dense" />
                         </Grid>
@@ -85,7 +85,7 @@ const CreateUser = () => {
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
                                 id="filled-basic"
-                                label="Password"
+                                label="Senha"
                                 variant="filled" />
                         </Grid>
 
