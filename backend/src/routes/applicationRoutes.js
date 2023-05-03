@@ -5,6 +5,7 @@
 
     router
         .get("/application", ApplicationController.listApp)
+        .get("/application/:id", ApplicationController.listById)
         .post("/application", ApplicationController.createApp)
 
 

@@ -5,15 +5,12 @@ import Home from './pages/Home';
 import  Account from "./pages/Account";
 import User from './components/User';
 import AccountX from './components/Account';
-import Theme from './Theme/Theme';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
-import Application from './components/Application';
+  import Application from './components/Application';
 
 function App() {
   return (
     
-       <ThemeProvider theme={Theme}>
-    <Routes>
+     <Routes>
       <Route path="/" element={<Home />}></Route>
       <Route path="/accounts" element={ <Account/>}></Route>
       <Route path="/users" element={ <User/>}></Route>
@@ -21,8 +18,7 @@ function App() {
       <Route path="/applications" element={ <Application/>}></Route>
 
      </Routes>
-    </ThemeProvider>
-  );
+   );
 }
 
 export default App;

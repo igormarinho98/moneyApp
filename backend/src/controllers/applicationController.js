@@ -19,6 +19,17 @@
             });
         }
 
+        static listById = (req, res) => {
+            const id = req.params.id;
+            Application.findById(id, (err, data) => {
+                if(!err) {
+                    res.status(200).send(data.toJSON())
+                } else {
+                    res.status(500).send({message: err.message})
+                }
+            })
+        }
+
 
 
     }
