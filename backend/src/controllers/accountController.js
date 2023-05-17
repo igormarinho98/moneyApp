@@ -45,6 +45,8 @@ import Account from "../models/Account.js";
         }
       })
      }
+
+       
       
       static deleteAccount = (req, res) => {
         const id = req.params.id

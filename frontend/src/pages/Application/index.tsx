@@ -1,6 +1,6 @@
 import IApp from "../../interfaces/IApp";
-import ListApplication from "../ListApplication";
-import NavBar from "../Navbar";
+import ListApplication from "../../components/ListApplication";
+import NavBar from "../../components/Navbar";
 
   interface AppProps {
     app?: IApp

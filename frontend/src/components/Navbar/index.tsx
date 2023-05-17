@@ -17,7 +17,7 @@ const NavBar = () => {
   <Link
     underline="hover"
     color="inherit"
-    href="/accounts"
+    href="/account"
     >
     Gestão de Contas
   </Link>
@@ -25,14 +25,14 @@ const NavBar = () => {
   <Link
     underline="hover"
     color="inherit"
-    href="/users"
+    href="/user"
     >
     Gestão de Usuários
   </Link>
   <Link
     underline="hover"
     color="inherit"
-    href="/applications"
+    href="/application"
     >
     Aplicações
   </Link>
