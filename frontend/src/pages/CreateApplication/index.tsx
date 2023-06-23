@@ -82,7 +82,7 @@ const CreateApplication =  () => {
                                 value={currency}
                                 onChange={(e) => setCurrency(e.target.value)}
                                 type="text"
-                                label="Criado em"
+                                label="Moeda"
                                 variant="filled" />
 
                         </Grid>
