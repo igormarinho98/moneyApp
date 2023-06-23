@@ -2,6 +2,7 @@
  import ListUsers from "../ListUsers";
  import NavBar from "../Navbar";
 import CreateUser from "../CreateUser";
+import { Button, Link } from "@mui/material";
  
   interface UserProps {
     user?: IUser
@@ -13,7 +14,16 @@ import CreateUser from "../CreateUser";
     return (
         <div>
           <NavBar/>
-          <CreateUser/>
+          <Button type="submit" variant="contained">
+
+                            <Link
+                                underline="hover"
+                                color="inherit"
+                                href="/user/create"
+                            >
+                                Criar
+                            </Link>
+                        </Button>
           <ListUsers/>
         </div>
     )

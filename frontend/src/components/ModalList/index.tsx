@@ -15,7 +15,7 @@ import { blue } from '@mui/material/colors';
 
 const enviroments = ['HML Enviroment', 'PROD Enviroment', 'DEV Enviroment'];
 
-
+ 
 export interface SimpleDialogProps {
   open: boolean;
   selectedValue: string;
@@ -86,7 +86,7 @@ export default function SimpleDialogDemo() {
         Selected: {selectedValue}
       </Typography>
       <br />
-      <Button variant="outlined" onClick={handleClickOpen}>
+      <Button variant="outlined" id="button-choose" onClick={handleClickOpen}>
         Choose Enviroment
       </Button>
       <SimpleDialog

@@ -1,8 +1,8 @@
 import IAccount from "../../interfaces/IAccount";
 import NavBar from "../Navbar";
 import styles from "./Account.module.scss";
-import CreateAccount from "../CreateAccount";
-import { Card, CardContent, Paper } from "@mui/material";
+import CreateAccount from "../../pages/CreateAccount/index";
+import { Card, CardContent, Paper, Button, Link } from "@mui/material";
 
 interface AccountProps {
     account?: IAccount
@@ -18,12 +18,20 @@ const AccountX = ({ account }: AccountProps) => {
 
                     <Paper>
                         <NavBar />
-                        <CreateAccount />
-                        
+                        <Button type="submit" variant="contained">
+
+                            <Link
+                                underline="hover"
+                                color="inherit"
+                                href="/account/create"
+                            >
+                                Criar
+                            </Link>
+                        </Button>
                     </Paper>
                 </CardContent>
             </Card>
-         </div>
+        </div>
     )
 }
 

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Grid, TextField, Button } from "@mui/material";
 import styles from "./CreateUser.module.scss";
+import NavBar from "../Navbar";
 
 const url = 'http://localhost:3000/users';
 
@@ -41,6 +42,7 @@ const CreateUser = () => {
     return (
         <>
             <div className={styles.main}>
+                <NavBar />
 
                 <h3>Tela de Criação de Usuários</h3>
                 <form onSubmit={handleSubmit}>

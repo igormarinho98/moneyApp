@@ -13,7 +13,7 @@ function App() {
         <div className={styles.Home}>
 
             <ul className={styles.Central}>
-            <h1>webvest</h1>
+            <h1>Webvest</h1>
              
 
             </ul>
