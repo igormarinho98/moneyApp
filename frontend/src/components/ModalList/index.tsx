@@ -13,7 +13,7 @@ import AddIcon from '@mui/icons-material/Add';
 import Typography from '@mui/material/Typography';
 import { blue } from '@mui/material/colors';
 
-const enviroments = ['HML Enviroment', 'PROD Enviroment', 'DEV Enviroment'];
+const enviroments = ['WEB VEST', 'WEB VEST EAST SIDE', 'WEB VEST SOUTH SIDE'];
 
  
 export interface SimpleDialogProps {
@@ -82,12 +82,16 @@ export default function SimpleDialogDemo() {
 
   return (
     <div>
-      <Typography variant="subtitle1" component="div">
-        Selected: {selectedValue}
-      </Typography>
-      <br />
+         Selected:
+         
+         <h3>
+          {selectedValue}
+
+         </h3>
+         
+       <br />
       <Button variant="outlined" id="button-choose" onClick={handleClickOpen}>
-        Choose Enviroment
+        Choose Area
       </Button>
       <SimpleDialog
         selectedValue={selectedValue}
