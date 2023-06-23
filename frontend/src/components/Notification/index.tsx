@@ -18,7 +18,7 @@ function MyApp() {
 
   return (
     <React.Fragment>
-        <Button onClick={handleClick}>Show snackbar</Button>
+        <Button onClick={handleClick}>Dont Clik</Button>
       <Button onClick={handleClickVariant('success')}>Clik</Button>
       
     </React.Fragment>
