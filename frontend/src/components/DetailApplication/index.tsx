@@ -1,6 +1,6 @@
 import axios from "axios";
  
-    const url = 'http://localhost:3000/application/';
+    const url = 'https://moneyapp.onrender.com/application/';
  
    
    

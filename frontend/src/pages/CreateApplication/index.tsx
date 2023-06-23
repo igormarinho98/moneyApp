@@ -4,7 +4,7 @@ import { Button, Grid, TextField } from "@mui/material";
 import styles from "./CreateApplication.module.scss";
 import axios from "axios";
 
-const url = 'http://localhost:3000/application';
+const url = 'https://moneyapp.onrender.com/application';
 
 
 const CreateApplication =  () => {

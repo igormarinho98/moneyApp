@@ -5,7 +5,7 @@ import styles from "./ListUsers.module.scss";
   
 import IUser from "../../interfaces/IUser";
  
-const url = 'http://localhost:3000/users';
+const url = 'https://moneyapp.onrender.com/users';
 
 const ListUsers = () => {
 

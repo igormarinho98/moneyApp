@@ -8,7 +8,7 @@ import styles from "./ListAccounts.module.scss";
 import IAccount from "../../interfaces/IAccount";
 import { CardContent } from "@mui/material";
 
-const url = 'http://localhost:3000/account';
+const url = 'https://moneyapp.onrender.com/account';
 
 
 

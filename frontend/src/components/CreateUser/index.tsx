@@ -4,7 +4,7 @@ import { Grid, TextField, Button } from "@mui/material";
 import styles from "./CreateUser.module.scss";
 import NavBar from "../Navbar";
 
-const url = 'http://localhost:3000/users';
+const url = 'https://moneyapp.onrender.com/users';
 
 
 const CreateUser = () => {

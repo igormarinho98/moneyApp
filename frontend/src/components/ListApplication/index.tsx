@@ -5,7 +5,7 @@ import IApp from "../../interfaces/IApp";
 import styles from "./ListApplication.module.scss";
 
 
-const url = 'http://localhost:3000/application';
+const url = 'https://moneyapp.onrender.com/application';
 
 const ListApplication = () => {
 
