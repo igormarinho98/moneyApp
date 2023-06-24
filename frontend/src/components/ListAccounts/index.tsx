@@ -6,7 +6,7 @@ import styles from "./ListAccounts.module.scss";
  
 
 import IAccount from "../../interfaces/IAccount";
-import { CardContent, Divider } from "@mui/material";
+import { CardContent, Divider, Chip } from "@mui/material";
 
 const url = 'https://moneyapp.onrender.com/account';
 
@@ -39,12 +39,29 @@ const ListAccount = () => {
           <Card sx={{  minWidth: 275 }} color="text-secondary"  >
             <CardContent>
               <div >
-                <li className={styles.main} key={dado._id as any}>  ID Conta: {dado._id }
-                  <p key={dado.agency} >Agencia: {dado.agency}</p>
-                  <p key={dado.account_number}>Conta: {dado.account_number}</p>
-                  <p key={dado.balance.$numberDecimal} >Saldo: {dado.balance.$numberDecimal}</p>
-                  <p key={dado.created_at} >Criado: {dado.created_at}</p>
-                  <p key={dado.user_id} className={styles.linha}>User ID: {dado.user_id}</p>
+                <li className={styles.main} key={dado._id as any}>  
+                <Chip label="ID Conta : " color="primary"  variant="outlined" />  
+     
+                 {dado._id }
+                  <p key={dado.created_at} >
+                  <Chip label="Data de Criação : " color="success" variant="outlined" />  
+     
+                    {dado.created_at}
+                    </p>
+               <p>
+                <Chip label="Agencia :" color="success" variant="outlined" /> {dado.agency} 
+                </p> 
+                  <p key={dado.account_number}>
+                  <Chip label="Conta :" color="success" variant="outlined" />  
+                     {dado.account_number}</p>
+                  <p key={dado.balance.$numberDecimal} >
+                  <Chip label="Saldo :" color="success" variant="outlined" />  
+                     {dado.balance.$numberDecimal}</p>
+
+                  <p key={dado.user_id} className={styles.linha}>
+                     <Chip label=" User ID : " color="primary" variant="outlined" />
+                    
+                    {dado.user_id}</p>
                 <li><Button color="warning" variant="contained">Editar</Button></li>
                   <li><Button color="error" variant="contained">Excluir</Button></li>
 
