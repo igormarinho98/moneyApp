@@ -3,6 +3,7 @@ import NavBar from "../../components/Navbar"
 import { Button, Grid, TextField } from "@mui/material";
 import styles from "./CreateApplication.module.scss";
 import axios from "axios";
+import { redirect } from "react-router-dom";
 
 const url = 'https://moneyapp.onrender.com/application';
 
@@ -10,6 +11,7 @@ const url = 'https://moneyapp.onrender.com/application';
 const CreateApplication =  () => {
 
     const [userId, setUserId] = useState('');
+    const [accountId, setAccountId] = useState('');
     const [type, setType] = useState('');
     const [value, setValue] = useState('');
     const [currency, setCurrency] = useState('');
@@ -20,6 +22,7 @@ const CreateApplication =  () => {
 
             const data = {
                 user_id: userId,
+                account_id: accountId,
                 type: type,
                 value: value,
                 currency: currency,
@@ -27,6 +30,7 @@ const CreateApplication =  () => {
 
             const response = await axios.post(url, data);
             console.log(response.data)  
+            redirect('/')
         } catch (error) {
             console.error(error)
         }
@@ -86,6 +90,21 @@ const CreateApplication =  () => {
                                 variant="filled" />
 
                         </Grid>
+
+                        
+                        <Grid item xs={8}>
+
+
+                            <TextField
+                                value={accountId}
+                                onChange={(e) => setAccountId(e.target.value)}
+                                type="text"
+                                label="Account ID"
+                                variant="filled" />
+
+                        </Grid>
+
+
 
 
 

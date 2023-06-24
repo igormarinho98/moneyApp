@@ -33,6 +33,7 @@ const ListApplication = () => {
                     <CardContent>
                         <div className={styles.main} >
                             <p>App ID: {item._id}</p>
+                            <p>Account ID: {item.account_id}</p>
                             <p>Moeda: {item.currency}</p>
 
                             <p>Valor: {item.value?.$numberDecimal}</p>

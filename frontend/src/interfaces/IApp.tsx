@@ -2,6 +2,7 @@ export default interface IApp {
     _id?: string;
     user_id: string;
     application?: string;
+    account_id?: string;
     type?: string;
     value?:{
         $numberDecimal: string
