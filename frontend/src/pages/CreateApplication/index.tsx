@@ -74,7 +74,7 @@ const CreateApplication =  () => {
                                 value={value}
                                onChange={(e) => setValue(e.target.value)}
                                 id="filled-basic"
-                                label="Conta"
+                                label="Valor"
                                 variant="filled" />
 
                         </Grid>

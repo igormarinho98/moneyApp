@@ -6,7 +6,7 @@ import styles from "./ListAccounts.module.scss";
  
 
 import IAccount from "../../interfaces/IAccount";
-import { CardContent } from "@mui/material";
+import { CardContent, Divider } from "@mui/material";
 
 const url = 'https://moneyapp.onrender.com/account';
 
@@ -52,6 +52,7 @@ const ListAccount = () => {
                 </li>
               </div>
             </CardContent>
+            <Divider light />
           </Card>
         ))}
       </ul>

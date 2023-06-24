@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
-import { Card, CardContent, Button } from "@mui/material";
+import { Card, CardContent, Button, Divider } from "@mui/material";
 import styles from "./ListUsers.module.scss";
   
 import IUser from "../../interfaces/IUser";
@@ -45,6 +45,7 @@ const ListUsers = () => {
       </div>
    </li>
 </CardContent>
+<Divider />
  </Card>
  ))} 
 </ul>
