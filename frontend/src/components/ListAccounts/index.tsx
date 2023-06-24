@@ -52,7 +52,7 @@ const ListAccount = () => {
                 </li>
               </div>
             </CardContent>
-            <Divider light />
+            <Divider style={{ background: 'black'}} variant="middle" />
           </Card>
         ))}
       </ul>

@@ -77,7 +77,7 @@ const ListApplication = () => {
                         </div>
                     </CardContent>
             </Grid>
-                    <Divider light />
+                    <Divider style={{ background: 'black'}} variant="middle" />
 
                 </Card>
                 

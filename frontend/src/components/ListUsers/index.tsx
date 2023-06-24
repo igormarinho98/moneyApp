@@ -45,7 +45,7 @@ const ListUsers = () => {
       </div>
    </li>
 </CardContent>
-<Divider />
+<Divider style={{ background: 'black'}} variant="middle" />
  </Card>
  ))} 
 </ul>
