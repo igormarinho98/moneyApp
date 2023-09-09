@@ -3,6 +3,7 @@ import axios from "axios";
 import { Button, Card, CardContent, Divider, Chip, Grid, Dialog, DialogActions, DialogContent, DialogTitle } from "@mui/material";
 import IApp from "../../interfaces/IApp";
 import styles from "./ListApplication.module.scss";
+import AppDetailsModal from "../AppDetailsModal";
 
 
 const url = 'https://moneyapp.onrender.com/application';
@@ -11,15 +12,17 @@ const ListApplication = () => {
 
     const [applications, setApplications] = useState<IApp[]>([]);
 
-    const [open, setOpen] = useState(false);
+    const [selectedApplication, setSelectedApplication] = useState<IApp | null>(null);
 
-    const handleOpen = () => {
-        setOpen(true);
-    };
 
-    const handleClose = () => {
-        setOpen(false);
-    };
+
+    const handleOpen = (application: IApp) => {
+        setSelectedApplication(application);
+      };
+    
+      const handleClose = () => {
+        setSelectedApplication(null);
+      };
 
     useEffect(() => {
         axios
@@ -52,55 +55,15 @@ const ListApplication = () => {
                                     {item.currency}
 
                                 </h4>
-                                <Chip label="Valor:" color="primary" variant="outlined" />
-                                <h4>
-                                    {item.value?.$numberDecimal}
-
-                                </h4>
-                                <Chip label="Vencimento:" color="primary" variant="outlined" />
-                                <h4>
-                                    {item.expiration || "FALSE"}
-
-                                </h4>
-
-                                <Chip label="Data de Aplicação:" color="primary" variant="outlined" />
-                                <h4>
-                                    {item.applicated_at}
-
-                                </h4>
-                                <Chip label="Data de Vencimento:" color="primary" variant="outlined" />
-
-                                <h4>
-                                    {item.expiration_date}
-                                </h4>
-
-                                <Chip label="Resgatado:" color="primary" variant="outlined" />
-
-                                <h4>
-                                    {item.flag_redemption || "FALSE"}
-
-                                </h4>
-
+                              
 
                             </div>
-                            <li><Button className="btn-form" color="warning" variant="contained" onClick={handleOpen}>Detalhes</Button></li>
+                            <li>
+                            <Button className="btn-form" color="warning" variant="contained" onClick={() => handleOpen(item)}>Detalhes            </Button>
+
+                                </li>
   
-                            <Dialog open={open} onClose={handleClose}>
-                                <DialogTitle>Aplicação {item.currency} </DialogTitle>
-                                <DialogContent>
-                                    <p>ID: {item._id}</p>
-                                    <p>Valor: {item.value?.$numberDecimal}</p>
-
-                                    <p>Data de Vencimento: {item.expiration_date}</p>
-                                    <p>Data de Registro: {item.applicated_at}</p>
-
-                                 </DialogContent>
-                                <DialogActions>
-                                    <Button onClick={handleClose} color="primary">
-                                        Fechar
-                                    </Button>
-                                </DialogActions>
-                            </Dialog>
+                            
 
                         </CardContent>
                     </Grid>
@@ -109,6 +72,9 @@ const ListApplication = () => {
                 </Card>
 
             ))}
+
+<AppDetailsModal open={selectedApplication !== null} onClose={handleClose} application={selectedApplication} />
+
         </>
     )
 
