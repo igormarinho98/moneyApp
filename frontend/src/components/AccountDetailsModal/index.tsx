@@ -17,8 +17,7 @@ const AccountDetailsModal: React.FC<AccountDetailsModalProps> = ({ open, onClose
                     <DialogContent>
                         <p>Account ID: {account._id}</p>
  
-                        <Chip label="Valor:" color="primary" variant="outlined" />
-
+ 
                         <Chip label="Agencia:" color="primary" variant="outlined" />
                         <h4>
                             {account.agency || "FALSE"}

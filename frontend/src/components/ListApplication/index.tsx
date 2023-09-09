@@ -44,15 +44,13 @@ const ListApplication = () => {
 
 
                     <h2 className="mt-2"> {item.type}</h2>
-                    <h3> {item.application} </h3>
-                    <Grid container spacing={4}>
+                     <Grid container spacing={4}>
                         <CardContent>
                             <div className={styles.main} >
-                                <Chip label="Account ID:" color="primary" variant="outlined" /> <h4>{item.account_id}</h4>
-
-                                <Chip label="Moeda:" color="success" variant="outlined" />
+ 
+                                <Chip label="Data de Aplicação:" color="success" variant="outlined" />
                                 <h4>
-                                    {item.currency}
+                                    {item.applicated_at}
 
                                 </h4>
                               
