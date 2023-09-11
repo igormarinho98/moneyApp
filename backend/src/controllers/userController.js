@@ -1,54 +1,48 @@
 import User from "../models/User.js";
 
-
 class UserController {
-    static listUser = (req, res) => {
-        User.find((err, data) => {
-            res.status(200).json(data)
-        });
-
+  static listUser = async (req, res) => {
+    try {
+      const data = await User.find();
+      res.status(200).json(data);
+    } catch (err) {
+      res.status(500).send({ message: `${err.message} - falha ao listar usuários!` });
     }
+  };
 
-    static createUser = (req, res) => {
-       let user = new User(req.body);
-
-       user.save((err) => {
-        if (err) {
-        res.status(500).send({message: `${err.message} - falha ao cadastrar usuario!`})
-        } else {
-            res.status(201).send(user.toJSON())
-        }
-
-        });
+  static createUser = async (req, res) => {
+    try {
+      const user = new User(req.body);
+      await user.save();
+      res.status(201).send(user.toJSON());
+    } catch (err) {
+      res.status(500).send({ message: `${err.message} - falha ao cadastrar usuário!` });
     }
+  };
 
-    static updateUser = (req, res) => {
-        let id = req.params.id;
-
-        User.findByIdAndUpdate(id, {$set: req.body}, (err) => {
-          if(!err) {
-            res.status(200).send({message: "Usuário atualizado"})
-          } else {
-            res.status(500).send({message: err.message})
-          }
-
-        });
+  static updateUser = async (req, res) => {
+    const id = req.params.id;
+    try {
+      await User.findByIdAndUpdate(id, { $set: req.body });
+      res.status(200).send({ message: "Usuário atualizado" });
+    } catch (err) {
+      res.status(500).send({ message: err.message });
     }
+  };
 
-    static deleteUser = (req, res) => {
-        let id = req.params.id;
-
-        User.findByIdAndDelete(id, (err) => {
-            if (!err) {
-            res.status(200).send({message: "Usuário excluído"})
-            } else {
-            res.status(500).send({message: err.message})
-            }
-        });
-
+  static deleteUser = async (req, res) => {
+    const id = req.params.id;
+    try {
+      const result = await User.findByIdAndDelete(id);
+      if (result) {
+        res.status(200).send({ message: "Usuário excluído" });
+      } else {
+        res.status(404).send({ message: "Usuário não encontrado" });
+      }
+    } catch (err) {
+      res.status(500).send({ message: err.message });
     }
-
-
+  };
 }
 
 export default UserController;

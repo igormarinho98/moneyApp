@@ -5,7 +5,7 @@ import application from "./applicationRoutes.js";
 
 const routes = (app) => {
     app.route("/").get((req, res) => {
-        res.send("Hello World")
+        res.json({by: 'IGOR MARINHO LEONARDO'})
     })
 
     
