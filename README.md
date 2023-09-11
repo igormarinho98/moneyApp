@@ -1,18 +1,23 @@
-# moneyApp
-Finance Banking APP
 
-<h1>Acesse o projeto aqui: https://money-app-nine.vercel.app/</h1> 
+## Acesso ao Projeto
 
-# Esse é um projeto que estou desenvolvendo para aprendizado pessoal, estou utilizando React, Node.js, MongoDB.
+Você pode acessar a aplicação [aqui](https://money-app-nine.vercel.app/). 🌐
 
-# Estou utilizando o MongoDB Atlas para minha base de dados, o node para a API e o React no Front-End.
+A API Back-End está disponível [aqui](https://moneyapp.onrender.com/). 📡
+## Tecnologias Utilizadas
 
-# O Board deste projeto está disponível em : https://github.com/users/igormarinho98/projects/1
+Este projeto foi construído com uma pilha de tecnologias modernas para proporcionar uma experiência robusta e eficiente:
 
-![image](https://github.com/igormarinho98/moneyApp/assets/35459531/0fe89090-e3f4-4774-94c1-0a93d00a9370)
+- **React com TypeScript:** Utilizado para desenvolver o Front-End da aplicação, trazendo maior segurança e produtividade no desenvolvimento.
 
-![image](https://github.com/igormarinho98/moneyApp/assets/35459531/53491e99-5c8d-48c0-8f29-8e3ee7cea458)
+- **Node.js:** Responsável pela criação do Back-End, permitindo a construção de APIs poderosas e escaláveis.
 
-![image](https://github.com/igormarinho98/moneyApp/assets/35459531/2be778a3-21fa-4c35-95cc-8a2e6228abed)
+- **MongoDB:** Utilizado como banco de dados para armazenar todas as informações cruciais do aplicativo.
 
-![image](https://github.com/igormarinho98/moneyApp/assets/35459531/c88ce71c-a755-4256-a85e-37f182ab2409)
+- **MongoDB Atlas:** O banco de dados é hospedado na nuvem através do MongoDB Atlas, garantindo alta disponibilidade e segurança dos dados.
+
+- **Render (Back-End):** A aplicação Back-End está implantada na Render, proporcionando um ambiente robusto e escalável.
+
+- **Vercel (Front-End):** O Front-End da aplicação é implantado na Vercel, garantindo uma experiência de usuário ágil e confiável.
+
+Essas tecnologias foram escolhidas para criar uma aplicação moderna e de alto desempenho que atenda às suas necessidades financeiras de forma eficaz. 🚀
