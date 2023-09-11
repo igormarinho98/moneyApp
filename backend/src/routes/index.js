@@ -5,7 +5,14 @@ import application from "./applicationRoutes.js";
 
 const routes = (app) => {
     app.route("/").get((req, res) => {
-        res.json({by: 'IGOR MARINHO LEONARDO'})
+        res.json({by: 'IGOR MARINHO LEONARDO', 
+                    start: "endpoints below, just access:",
+                    application: "/application",
+                    users:  "/users",
+                    account:  "/account",
+                    
+
+    })
     })
 
     
