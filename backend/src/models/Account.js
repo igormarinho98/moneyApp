@@ -9,7 +9,7 @@
     user_id: {type: mongoose.Schema.Types.ObjectId, ref: 'User',  required: true},
     agency: {type: String},
     account_number: {type: String, required: true},
-    balance: {type: mongoose.Types.Decimal128, default: 0.0},
+    balance: {type: Number, default: 0.0},
     created_at:{type: Date, default: Date.now}
 
 });

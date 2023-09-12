@@ -1,3 +1,4 @@
+import Application from "../models/Application.js";
 import User from "../models/User.js";
 
 class UserController {
@@ -9,6 +10,9 @@ class UserController {
       res.status(500).send({ message: `${err.message} - falha ao listar usuários!` });
     }
   };
+
+
+  
 
   static createUser = async (req, res) => {
     try {

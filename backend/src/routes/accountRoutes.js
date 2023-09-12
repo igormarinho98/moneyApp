@@ -8,8 +8,10 @@
         .get("/account", AccountController.listAccount)
         .get("/account/:id", AccountController.listAccountById)
         .post("/account", AccountController.createAccount)
+        .get('/account/invest/:id', AccountController.listApplicationByAccount)
+        .post("/account/invest", AccountController.makeInvestment)
         .put("/account/:id", AccountController.updateAccount)
         .delete("/account/:id", AccountController.deleteAccount)
-
+        
         export default router;
 

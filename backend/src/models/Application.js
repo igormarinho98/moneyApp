@@ -6,7 +6,6 @@
 
     const appSchema = Schema ({
 
-    user_id: {type: mongoose.Schema.Types.ObjectId, ref: 'User',  required: true},
     account_id: {type: mongoose.Schema.Types.ObjectId, ref: 'Account', required: true},
     application: {type: mongoose.Schema.Types.ObjectId, auto: true },
     applicated_at: {type: Date, default: Date.now},
