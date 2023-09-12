@@ -22,7 +22,7 @@ const Application = () => {
         >
     <Button variant="contained">
           
-          Criar
+          Investir
       </Button>
         </Link>
 

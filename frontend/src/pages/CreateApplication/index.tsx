@@ -5,28 +5,23 @@ import styles from "./CreateApplication.module.scss";
 import axios from "axios";
 import { redirect } from "react-router-dom";
 
-const url = 'https://moneyapp.onrender.com/application';
+const url = 'https://moneyapp.onrender.com/account/invest';
+ // const urlDev = 'https://localhost:3000/account/invest';
 
 
 const CreateApplication =  () => {
 
-    const [userId, setUserId] = useState('');
-    const [accountId, setAccountId] = useState('');
-    const [type, setType] = useState('');
-    const [value, setValue] = useState('');
-    const [currency, setCurrency] = useState('');
-
+     const [accountId, setAccountId] = useState('');
+     const [investmentAmount, setInvestmentAmount] = useState('');
+ 
     const handleSubmit = async (event: any) => {
         event.preventDefault();
         try {
 
             const data = {
-                user_id: userId,
-                account_id: accountId,
-                type: type,
-                value: value,
-                currency: currency,
-             };
+                 account_id: accountId,
+                 investmentAmount: investmentAmount,
+              };
 
             const response = await axios.post(url, data);
             console.log(response.data)  
@@ -47,49 +42,8 @@ const CreateApplication =  () => {
                 <form onSubmit={handleSubmit}>
 
                     <Grid container spacing={2}>
-                        <Grid item xs={8}>
-
-                            <TextField
-                                value={userId}
-                                onChange={(e) => setUserId(e.target.value)}
-                                id="filled-basic"
-                                label="User ID"
-                                variant="filled"
-                                margin="dense" />
-                        </Grid>
-
-                        <Grid item xs={8}>
-
-                            <TextField
-                                value={type}
-                                onChange={(e) => setType(e.target.value)}
-                                id="filled-basic"
-                                label="Tipo"
-                                variant="filled" />
-                        </Grid>
-
-
-                        <Grid item xs={8}>
-                            <TextField
-                                value={value}
-                               onChange={(e) => setValue(e.target.value)}
-                                id="filled-basic"
-                                label="Valor"
-                                variant="filled" />
-
-                        </Grid>
-
-                        <Grid item xs={8}>
-
-
-                            <TextField
-                                value={currency}
-                                onChange={(e) => setCurrency(e.target.value)}
-                                type="text"
-                                label="Moeda"
-                                variant="filled" />
-
-                        </Grid>
+                       
+                    
 
                         
                         <Grid item xs={8}>
@@ -103,6 +57,17 @@ const CreateApplication =  () => {
                                 variant="filled" />
 
                         </Grid>
+
+                        <Grid item xs={8}>
+                            <TextField
+                                value={investmentAmount}
+                               onChange={(e) => setInvestmentAmount(e.target.value)}
+                                id="filled-basic"
+                                label="Valor"
+                                variant="filled" />
+
+                        </Grid>
+ 
 
 
 
