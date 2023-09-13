@@ -18,9 +18,7 @@
       // Adicione mais tipos de CDB conforme necessário
     ];
 
-    const numCDB = [1000];
-
-    const numeroAleatorio = Math.floor(Math.random() * tiposCDB.length);
+    const numeroAleatorio = Math.floor(Math.random());
 
     const indiceAleatorio = Math.floor(Math.random() * numCDB.length);
 
