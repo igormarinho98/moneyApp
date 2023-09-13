@@ -6,7 +6,7 @@
 
     const appSchema = Schema ({
 
-      accountNumber: {type: String, ref: 'Account', required: true},
+      account_number: {type: String, ref: 'Account', required: true},
     agency: {type: String, ref: 'Account', required: true},
     application: {type: mongoose.Schema.Types.ObjectId, auto: true },
     applicated_at: {type: Date, default: Date.now},

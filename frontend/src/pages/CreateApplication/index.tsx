@@ -12,7 +12,7 @@ const url = 'https://moneyapp.onrender.com/account/invest';
 const CreateApplication = () => {
 
     const [agency, setAgency] = useState('');
-    const [accountNumber, setAccountNumber]= useState('');
+    const [account_number, setAccountNumber]= useState('');
     const [investmentAmount, setInvestmentAmount] = useState('');
 
     const handleSubmit = async (event: any) => {
@@ -21,13 +21,13 @@ const CreateApplication = () => {
 
             const data = {
                 agency: agency,
-                accountNumber:accountNumber,
+                account_number: account_number,
                 investmentAmount: investmentAmount,
             };
 
             const response = await axios.post(url, data);
             console.log(response.data)
-            alert(`Aplicação Realizada! Agencia ${data.agency} Conta${data.accountNumber}Valor R$ ${data.investmentAmount}`)
+            alert(`Aplicação Realizada! Agencia ${data.agency} Conta${data.account_number}Valor R$ ${data.investmentAmount}`)
             redirect('/')
         } catch (error) {
             console.error(error)
@@ -66,7 +66,7 @@ const CreateApplication = () => {
 
 
                             <TextField
-                                value={accountNumber}
+                                value={account_number}
                                 onChange={(e) => setAccountNumber(e.target.value)}
                                 type="text"
                                 label="Account Number"
