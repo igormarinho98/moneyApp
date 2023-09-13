@@ -18,9 +18,11 @@
       // Adicione mais tipos de CDB conforme necessário
     ];
 
+    const numCDB = [1000];
+
     const numeroAleatorio = Math.floor(Math.random());
 
-    const indiceAleatorio = Math.floor(Math.random() * numCDB.length);
+    const indiceAleatorio = Math.floor(Math.random() * tiposCDB.length);
 
   // Acessar o item aleatório usando o índice gerado
   const tipoCDBAleatorio = tiposCDB[indiceAleatorio];
