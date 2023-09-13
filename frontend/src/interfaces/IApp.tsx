@@ -6,9 +6,7 @@ export default interface IApp {
     agency?: string;
     accountNumber?:string;
     type?: string;
-    value?:{
-        $numberDecimal: string
-    } ;
+    investmentAmount?: number;
     currency?: string;
     flag_redemption?: false;
     applicated_at?: string;

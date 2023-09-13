@@ -19,7 +19,7 @@ const AppDetailsModal: React.FC<AppDetailsModalProps> = ({ open, onClose, applic
             
             <Chip label="Valor:" color="primary" variant="outlined" />
                                 <h4>
-                                R$  {application.value?.$numberDecimal}
+                                R$  {application.investmentAmount}
 
                                 </h4>
 
