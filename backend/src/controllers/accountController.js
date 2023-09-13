@@ -75,24 +75,13 @@ class AccountController {
       const updatedAccount = await account.save();
 
 
-      const tiposCDB = [
-        'CDB Básico',
-        'CDB Plus',
-        'CDB Premium',
-        'CDB Especial',
-        // Adicione mais tipos de CDB conforme necessário
-      ];
-
-      const indiceAleatorio = Math.floor(Math.random() * tiposCDB.length);
-
-    // Acessar o item aleatório usando o índice gerado
-    const tipoCDBAleatorio = tiposCDB[indiceAleatorio];
+     
 
       const newApplication = new Application({
         agency: agency,
         accountNumber:accountNumber,
-        type: `${tipoCDBAleatorio} ++`,
-        value: investmentAmount,
+       
+        investmentAmount: investmentAmount,
         currency: 'BRL'
       });
       try {
