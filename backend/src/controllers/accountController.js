@@ -46,10 +46,10 @@ class AccountController {
   };
 
 
-  static listApplicationByAccount = async (req, res) => {
+  static listApplicationByAccountId = async (req, res) => {
     const id = req.params.id;
     try {
-      const data = await Application.find({account_id: id});
+      const data = await Application.findById({account_id: id});
       res.status(200).json(data);
     } catch (err) {
       res.status(500).send({ message: `${err.message} - falha ao listar aplicacoes!` });
@@ -57,10 +57,10 @@ class AccountController {
   };
 
   static makeInvestment = async (req, res) => {
-    const { accountId, investmentAmount } = req.body;
+    const { agency, accountNumber, investmentAmount } = req.body;
 
     try {
-      const account = await Account.findById(accountId);
+      const account = await Account.find({agency: agency, accountNumber: accountNumber} );
       if (!account) {
         return res.status(404).send({ message: 'Account not found' });
       }
@@ -89,7 +89,8 @@ class AccountController {
     const tipoCDBAleatorio = tiposCDB[indiceAleatorio];
 
       const newApplication = new Application({
-        account_id: accountId,
+        agency: agency,
+        accountNumber:accountNumber,
         type: `${tipoCDBAleatorio} ++`,
         value: investmentAmount,
         currency: 'BRL'

@@ -8,7 +8,7 @@
         .get("/account", AccountController.listAccount)
         .get("/account/:id", AccountController.listAccountById)
         .post("/account", AccountController.createAccount)
-        .get('/account/invest/:id', AccountController.listApplicationByAccount)
+        .get('/account/invest/:id', AccountController.listApplicationByAccountId)
         .post("/account/invest", AccountController.makeInvestment)
         .put("/account/:id", AccountController.updateAccount)
         .delete("/account/:id", AccountController.deleteAccount)

@@ -12,11 +12,6 @@ const Application = () => {
   return (
     <>
       <NavBar></NavBar>
-      <div className={styles.header}>
-        <ListApplication />
-      </div>
-      <div>
-      <Paper>
         <Link
           href="/application/create"
         >
@@ -25,6 +20,11 @@ const Application = () => {
           Investir
       </Button>
         </Link>
+      <div className={styles.header}>
+        <ListApplication />
+      </div>
+      <div>
+      <Paper>
 
       </Paper>
     </div>

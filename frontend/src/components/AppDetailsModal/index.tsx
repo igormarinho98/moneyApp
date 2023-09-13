@@ -22,6 +22,14 @@ const AppDetailsModal: React.FC<AppDetailsModalProps> = ({ open, onClose, applic
                                 R$  {application.value?.$numberDecimal}
 
                                 </h4>
+
+                                <Chip label="Conta:" color="primary" variant="outlined" />
+
+                                <h4>
+                                    {application.account_id }
+
+                                </h4>
+
                                 <Chip label="Vencimento:" color="primary" variant="outlined" />
                                 <h4>
                                     {application.expiration || "FALSE"}

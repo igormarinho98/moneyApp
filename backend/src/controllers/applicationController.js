@@ -21,13 +21,14 @@ class ApplicationController {
   };
 
   static listById = async (req, res) => {
-    const id = req.params.id;
+    const agency = req.body.agency;
+    const account_number = req.body.account_number;
     try {
-      const data = await Application.findById(id);
+      const data = await Application.find({agency:agency, account_number: account_number, });
       if (data) {
         res.status(200).send(data.toJSON());
       } else {
-        res.status(404).send({ message: 'Aplicação não encontrada' });
+        res.status(404).send({ message: 'Aplicação não Efetivada' });
       }
     } catch (err) {
       res.status(500).send({ message: err.message });

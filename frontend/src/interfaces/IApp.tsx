@@ -3,6 +3,8 @@ export default interface IApp {
     user_id: string;
     application?: string;
     account_id?: string;
+    agency?: string;
+    accountNumber?:string;
     type?: string;
     value?:{
         $numberDecimal: string

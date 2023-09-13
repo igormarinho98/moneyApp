@@ -6,12 +6,13 @@
 
     const appSchema = Schema ({
 
-    account_id: {type: mongoose.Schema.Types.ObjectId, ref: 'Account', required: true},
+      accountNumber: {type: String, ref: 'Account', required: true},
+    agency: {type: String, ref: 'Account', required: true},
     application: {type: mongoose.Schema.Types.ObjectId, auto: true },
     applicated_at: {type: Date, default: Date.now},
-    type: {type: String, required:true},
-    value: {type: mongoose.Types.Decimal128, required: true },
-    currency: {type: String, required: true},
+    type: {type: String, required:true, default: 'CDB X'},
+    investmentAmount: {type: Number, required: true },
+    currency: {type: String, required: true, default: 'BRL'},
     expiration: {type: Boolean, default: false},
     expiration_date: {type: Date, default: Date.now},
     flag_redemption: {type: Boolean, default: false}
