@@ -43,9 +43,12 @@ const ListApplication = () => {
                 <Card sx={{ minWidth: 200 }} color="text-secondary">
 
 
-                    <h2 className="mt-2"> {item.type}</h2>
-                     <Grid container spacing={4}>
+                     <Grid container spacing={2}>
                         <CardContent>
+                            <Card className={styles.cardApp}>
+                    <h2 className="mt-2"> {item.type}</h2>
+
+
                             <div className={styles.main} >
  
                                 <Chip label="Data de Aplicação:" color="success" variant="outlined" />
@@ -66,6 +69,7 @@ const ListApplication = () => {
                             <Button className="btn-form" color="warning" variant="contained" onClick={() => handleOpen(item)}>Detalhes            </Button>
 
                                 </li>
+                            </Card>
   
                             
 

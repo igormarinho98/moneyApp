@@ -26,7 +26,7 @@ const AppDetailsModal: React.FC<AppDetailsModalProps> = ({ open, onClose, applic
                                 <Chip label="Conta:" color="primary" variant="outlined" />
 
                                 <h4>
-                                    {application.account_id }
+                                    {application.account_number}
 
                                 </h4>
 
