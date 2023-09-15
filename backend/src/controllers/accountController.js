@@ -57,45 +57,42 @@ class AccountController {
   };
 
   static makeInvestment = async (req, res) => {
-    const { agency, accountNumber, investmentAmount } = req.body;
-
+    const { agency, account_number, investmentAmount } = req.body;
+  
     try {
-      const account = await Account.find({agency: agency, accountNumber: accountNumber} );
+      // Consulta a conta com base em agency e accountNumber
+      const account = await Account.findOne({ agency, account_number }).exec();
+  
       if (!account) {
         return res.status(404).send({ message: 'Account not found' });
       }
       if (account.balance < investmentAmount) {
         return res.status(400).send({ message: 'Insufficient balance' });
       }
-
-      // Deduct the investment amount from the account balance
+  
+      // Deduz o valor do investimento do saldo da conta
       account.balance -= investmentAmount;
-
-      // Save the updated account
+  
+      // Salva a conta atualizada
       const updatedAccount = await account.save();
-
-
-     
-
+  
+      // Cria uma nova aplicação
       const newApplication = new Application({
         agency: agency,
-        accountNumber:accountNumber,
-       
+        account_number: account_number,
         investmentAmount: investmentAmount,
         currency: 'BRL'
       });
-      try {
-        await newApplication.save();
-      } catch (err){
-        console.log(err);
-      }
-
-
-      return res.status(200).send({ message: 'Investment successful', updatedAccount });
+  
+      // Salva a nova aplicação
+      await newApplication.save();
+  
+      return res.status(200).send({ message: 'Investment successful', newApplication });
     } catch (err) {
       return res.status(500).send({ message: err.message });
     }
   };
+  
 
 
   static deleteAccount = async (req, res) => {
