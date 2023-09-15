@@ -3,9 +3,7 @@ export default interface IAccount {
     user_id: string;
     agency: string;
     account_number: string;
-    balance: {
-      $numberDecimal: string;
-    };
+    balance: number;
     created_at?: string;
     __v?: number;
 

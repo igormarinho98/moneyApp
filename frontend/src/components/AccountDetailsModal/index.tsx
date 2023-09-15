@@ -32,7 +32,7 @@ const AccountDetailsModal: React.FC<AccountDetailsModalProps> = ({ open, onClose
                         <Chip label="Saldo:" color="primary" variant="outlined" />
 
                         <h4>
-                        {account.balance?.$numberDecimal} $
+                        {account.balance} $
                         </h4>
 
 

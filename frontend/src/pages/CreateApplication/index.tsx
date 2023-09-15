@@ -12,7 +12,7 @@ const url = 'https://moneyapp.onrender.com/account/invest';
 const CreateApplication = () => {
 
     const [agency, setAgency] = useState('');
-    const [account_number, setAccountNumber]= useState('');
+    const [account_number, setAccountNumber] = useState('');
     const [investmentAmount, setInvestmentAmount] = useState('');
 
     const handleSubmit = async (event: any) => {
@@ -92,17 +92,17 @@ const CreateApplication = () => {
 
 
                     </Grid>
+
+
                     <Button type="submit" variant="contained">Criar</Button>
-
-
                 </form>
 
-                <form >
 
-                    <Button href="/application" variant="outlined">Voltar
 
-                    </Button>
-                </form>
+                <Link to="/application" className={styles.link}>
+                    <Button variant="outlined">Voltar</Button>
+                </Link>
+
             </div>
         </>
     )
