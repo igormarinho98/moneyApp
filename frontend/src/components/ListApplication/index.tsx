@@ -53,6 +53,12 @@ const ListApplication = () => {
                                     {item.applicated_at}
 
                                 </h4>
+
+                                <Chip label="Conta:" color="success" variant="outlined" />
+                                <h4>
+                                    {item.account_number}
+
+                                </h4>
                               
 
                             </div>

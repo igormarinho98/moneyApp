@@ -94,6 +94,50 @@ class AccountController {
   };
   
 
+  static withdrawInvestment = async (req, res) => {
+    const { id } = req.body;
+  
+    try {
+       const withdraw = await Application.findById(id);
+
+      const agency = withdraw.agency;
+      const account_number = withdraw.account_number;
+
+      const account = await Account.findOne({ agency, account_number }).exec();
+  
+      if (!withdraw) {
+        return res.status(404).send({ message: 'Application not found' });
+      }
+
+      if (!account) {
+        return res.status(404).send({ message: 'Account not found' });
+      }
+      
+  
+      // Deduz o valor do investimento do saldo da conta
+      account.balance += withdraw.investmentAmount;
+  
+      // Salva a conta atualizada
+      const updatedAccount = await account.save();
+  
+      // Cria uma nova aplicação
+      const newWithdraw = new Application({
+        agency: agency,
+        account_number: account_number,
+        currency: 'BRL',
+        type: 'WITHDRAW',
+        investmentAmount:withdraw.investmentAmount 
+      });
+  
+      // Salva a nova aplicação
+      await newWithdraw.save();
+  
+      return res.status(200).send({ message: 'Withdraw successful', newWithdraw });
+    } catch (err) {
+      return res.status(500).send({ message: err.message });
+    }
+  };
+
 
   static deleteAccount = async (req, res) => {
     const id = req.params.id;

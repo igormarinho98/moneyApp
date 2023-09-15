@@ -4,7 +4,7 @@ export default interface IApp {
     application?: string;
     account_id?: string;
     agency?: string;
-    accountNumber?:string;
+    account_number?:string;
     type?: string;
     investmentAmount?: number;
     currency?: string;
