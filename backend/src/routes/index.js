@@ -2,6 +2,8 @@ import express from "express";
 import account from "./accountRoutes.js"
 import user from "./userRoutes.js";
 import application from "./applicationRoutes.js";
+import withdraw from "./withdrawRoutes.js";
+
 
 const routes = (app) => {
     app.route("/").get((req, res) => {
@@ -10,6 +12,7 @@ const routes = (app) => {
                     application: "/application",
                     users:  "/users",
                     account:  "/account",
+                    withdraw:"/withdraws"
                     
 
     })
@@ -21,7 +24,8 @@ const routes = (app) => {
         express.json(),
         account,
         user,
-        application
+        application,
+        withdraw        
      )
 
 }
