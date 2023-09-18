@@ -4,6 +4,7 @@ import { Button, Grid, TextField } from "@mui/material";
 import styles from "./CreateApplication.module.scss";
 import axios from "axios";
 import { Link, redirect } from "react-router-dom";
+import PublishedWithChangesIcon from '@mui/icons-material/PublishedWithChanges';
 
 const url = 'https://moneyapp.onrender.com/account/invest';
 // const urlDev = 'https://localhost:3000/account/invest';
@@ -56,8 +57,8 @@ const CreateApplication = () => {
                                 value={agency}
                                 onChange={(e) => setAgency(e.target.value)}
                                 type="text"
-                                label="agency"
-                                variant="filled" />
+                                label="Agência"
+                                variant="outlined" />
 
                         </Grid>
 
@@ -69,8 +70,8 @@ const CreateApplication = () => {
                                 value={account_number}
                                 onChange={(e) => setAccountNumber(e.target.value)}
                                 type="text"
-                                label="Account Number"
-                                variant="filled" />
+                                label="Número da Conta"
+                                variant="outlined" />
 
                         </Grid>
 
@@ -80,7 +81,7 @@ const CreateApplication = () => {
                                 onChange={(e) => setInvestmentAmount(e.target.value)}
                                 id="filled-basic"
                                 label="Valor"
-                                variant="filled" />
+                                variant="outlined" />
 
                         </Grid>
 
@@ -94,7 +95,7 @@ const CreateApplication = () => {
                     </Grid>
 
 
-                    <Button type="submit" variant="contained">Criar</Button>
+                    <Button type="submit" variant="contained">Investir <PublishedWithChangesIcon/> </Button>
                 </form>
 
 

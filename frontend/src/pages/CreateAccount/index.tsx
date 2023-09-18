@@ -54,7 +54,7 @@ const CreateAccount = () => {
                                 onChange={(e) => setUserId(e.target.value)}
                                 id="filled-basic"
                                 label="User ID"
-                                variant="filled"
+                                variant="outlined"
                                 margin="dense" />
                         </Grid>
 
@@ -65,7 +65,7 @@ const CreateAccount = () => {
                                 onChange={(e) => setAgency(e.target.value)}
                                 id="filled-basic"
                                 label="Agencia"
-                                variant="filled" />
+                                variant="outlined" />
                         </Grid>
 
 
@@ -75,7 +75,7 @@ const CreateAccount = () => {
                                 onChange={(e) => setAccountNumber(e.target.value)}
                                 id="filled-basic"
                                 label="Conta"
-                                variant="filled" />
+                                variant="outlined" />
 
                         </Grid>
 
@@ -87,7 +87,7 @@ const CreateAccount = () => {
                                 onChange={(e) => setCreatedAt(e.target.value)}
                                 type="text"
                                 label="Criado em"
-                                variant="filled" />
+                                variant="outlined" />
 
                         </Grid>
 

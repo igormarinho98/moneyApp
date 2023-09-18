@@ -55,7 +55,7 @@ const CreateUser = () => {
                                 onChange={(e) => setUsername(e.target.value)}
                                 id="filled-basic"
                                 label="Nickname"
-                                variant="filled"
+                                variant="outlined"
                                 margin="dense" />
                         </Grid>
 
@@ -66,7 +66,7 @@ const CreateUser = () => {
                                 onChange={(e) => setFName(e.target.value)}
                                 id="filled-basic"
                                 label="Nome"
-                                variant="filled"
+                                variant="outlined"
                                 margin="dense" />
                         </Grid>
 
@@ -77,7 +77,7 @@ const CreateUser = () => {
                                 onChange={(e) => setLName(e.target.value)}
                                 id="filled-basic"
                                 label="Sobrenome"
-                                variant="filled"
+                                variant="outlined"
                                 margin="dense" />
                         </Grid>
 
@@ -88,7 +88,7 @@ const CreateUser = () => {
                                 onChange={(e) => setPassword(e.target.value)}
                                 id="filled-basic"
                                 label="Senha"
-                                variant="filled" />
+                                variant="outlined" />
                         </Grid>
 
 
@@ -98,7 +98,7 @@ const CreateUser = () => {
                                 onChange={(e) => setEmail(e.target.value)}
                                 id="filled-basic"
                                 label="Email"
-                                variant="filled" />
+                                variant="outlined" />
 
                         </Grid>
 
@@ -110,7 +110,7 @@ const CreateUser = () => {
                                 onChange={(e) => setCreatedAt(e.target.value)}
                                 type="text"
                                 label="Criado em"
-                                variant="filled" />
+                                variant="outlined" />
 
                         </Grid>
 
