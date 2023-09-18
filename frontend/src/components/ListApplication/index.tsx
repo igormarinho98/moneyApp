@@ -49,7 +49,7 @@ const ListApplication = () => {
             {applications.map(item => (
                 <div>
 
-                <Card sx={{ minWidth: 200 }} color="text-secondary">
+                <Card sx={{ minWidth: 200, paddingLeft: 3, paddingBottom: 6, paddingTop: 6 }} color="text-secondary">
 
 
                     <Grid container spacing={2}>
@@ -98,11 +98,6 @@ const ListApplication = () => {
                                 </div>
                                 <li>
 
-                                    <Button className="btn-form" color="warning" variant="contained" onClick={() => handleOpen(item)}>Detalhes
-                                        <FeedIcon>
-
-                                        </FeedIcon>
-                                    </Button>
 
                                 </li>
                             </Card>
@@ -113,7 +108,7 @@ const ListApplication = () => {
                     </Grid>
 
                 </Card>
-                <Card>
+                <Card sx={{ minWidth: 200, paddingLeft: 3, paddingBottom: 6 }}>
                 <Chip label="Valor do Investimento" color="success" variant="filled" />
 
                     
@@ -121,7 +116,11 @@ const ListApplication = () => {
                     R$ {item.investmentAmount}
                         </h3>                    
                  
-                    <LocalAtmIcon sx={{fontSize:45 }}/>
+                                     <Button className="btn-form" color="warning" variant="contained" onClick={() => handleOpen(item)}>Detalhes
+                                        <FeedIcon>
+
+                                        </FeedIcon>
+                                    </Button>
                 </Card>
                                     <Divider style={{ background: 'black' }} variant="middle" />
 
