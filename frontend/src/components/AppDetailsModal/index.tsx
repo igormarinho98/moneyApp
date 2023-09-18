@@ -36,7 +36,16 @@ const AppDetailsModal: React.FC<AppDetailsModalProps> = ({ open, onClose, applic
 
                                 <Chip label="Vencimento:" color="primary" variant="filled" />
                                 <h4>
-                                    {application.expiration || "FALSE"}
+                                {application.expiration ? (
+                                         <div className={styles.outroStatus}>
+                                            <DoneAllIcon style={{ color: "green" }} /> VENCIDO
+                                        </div>
+                                    ) : (
+                                         <div className={styles.investido}>
+                                            <AttachMoneyIcon style={{ color: "red" }} /> A VENCER
+                                        </div>
+                                    )}
+
 
                                 </h4>
 
@@ -54,13 +63,11 @@ const AppDetailsModal: React.FC<AppDetailsModalProps> = ({ open, onClose, applic
                                 <Chip label="Status:" color="primary" variant="filled" />
 
                                 {application.flag_redemption ? (
-                                        // Se item.flag_redemption for verdadeiro, exibir um ícone e texto diferente
-                                        <div className={styles.outroStatus}>
+                                         <div className={styles.outroStatus}>
                                             <DoneAllIcon style={{ color: "green" }} /> RESGATADO
                                         </div>
                                     ) : (
-                                        // Se item.flag_redemption não for verdadeiro, exibir INVESTIDO
-                                        <div className={styles.investido}>
+                                         <div className={styles.investido}>
                                             <AttachMoneyIcon style={{ color: "red" }} /> APLICADO
                                         </div>
                                     )}
