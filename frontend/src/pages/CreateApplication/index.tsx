@@ -1,11 +1,11 @@
 import { useState } from "react";
 import NavBar from "../../components/Navbar"
-import { Button, Grid, TextField } from "@mui/material";
+import { Button, Card, CardContent, Grid, TextField } from "@mui/material";
 import styles from "./CreateApplication.module.scss";
 import axios from "axios";
 import { Link, redirect } from "react-router-dom";
 import PublishedWithChangesIcon from '@mui/icons-material/PublishedWithChanges';
-
+import AddTaskIcon from '@mui/icons-material/AddTask';
 const url = 'https://moneyapp.onrender.com/account/invest';
 // const urlDev = 'https://localhost:3000/account/invest';
 
@@ -42,7 +42,20 @@ const CreateApplication = () => {
             <div className={styles.header}>
 
                 <NavBar />
-                <h3>Tela de Criação de Aplicação</h3>
+                <div>
+                <Card  >
+                    <CardContent>
+                        <h1>Utilize a conta a seguir para teste: Agencia 89 Conta 78545747</h1>
+                    </CardContent>
+                </Card>
+
+                </div>
+                <Card  >
+                    <CardContent>
+               
+
+                <h3 style={{fontSize:35, marginBottom: 10}}>Investir</h3>
+                   <AddTaskIcon sx={{fontSize:45, marginBottom: 5}}/>
                 <form onSubmit={handleSubmit}>
 
                     <Grid container spacing={2}>
@@ -54,7 +67,7 @@ const CreateApplication = () => {
 
 
                             <TextField
-                                value={agency}
+                                 value={agency}
                                 onChange={(e) => setAgency(e.target.value)}
                                 type="text"
                                 label="Agência"
@@ -95,14 +108,17 @@ const CreateApplication = () => {
                     </Grid>
 
 
-                    <Button type="submit" variant="contained">Investir <PublishedWithChangesIcon/> </Button>
+                    <Button  style={{fontSize:22, paddingTop: 10, marginTop: 10}} type="submit" variant="contained">Investir <PublishedWithChangesIcon/> </Button>
                 </form>
 
 
 
                 <Link to="/application" className={styles.link}>
-                    <Button variant="outlined">Voltar</Button>
+                    <Button style={{fontSize:22, paddingTop: 10,  marginTop: 10}}  variant="outlined">Voltar</Button>
                 </Link>
+                </CardContent>
+                </Card>
+
 
             </div>
         </>
