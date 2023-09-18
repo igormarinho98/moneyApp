@@ -9,7 +9,7 @@ import IApp from "../../interfaces/IApp";
 import styles from "./ListApplication.module.scss";
 import AppDetailsModal from "../AppDetailsModal";
 import BarChartIcon from '@mui/icons-material/BarChart';
-import LocalAtmIcon from '@mui/icons-material/LocalAtm';
+import WithdrawValues from "../WithdrawValues";
 const url = 'https://moneyapp.onrender.com/application';
 
 const ListApplication = () => {
@@ -49,6 +49,7 @@ const ListApplication = () => {
             {applications.map(item => (
                 <div>
 
+ 
                 <Card sx={{ minWidth: 200, paddingLeft: 3, paddingBottom: 6, paddingTop: 6 }} color="text-secondary">
 
 
@@ -122,7 +123,22 @@ const ListApplication = () => {
                                         </FeedIcon>
                                     </Button>
                 </Card>
-                                    <Divider style={{ background: 'black' }} variant="middle" />
+                <Card sx={{ minWidth: 200, paddingLeft: 3, paddingBottom: 6 }}>
+                <Chip label="Valor do Investimento" color="success" variant="filled" />
+
+                    
+                    <h3 style={{fontFamily: 'Arial', fontSize:22, paddingLeft: 3, paddingBottom: 6, border: 6}}>
+                    R$ {item.investmentAmount}
+                        </h3>                    
+                                       <Button className="btn-form" color="warning" variant="contained" onClick={() => handleOpen(item)}>Detalhes
+                                        <FeedIcon>
+
+                                        </FeedIcon>
+                                    </Button>
+                </Card>
+                <WithdrawValues/>
+
+                                     <Divider style={{ background: 'black' }} variant="middle" />
 
             </div>
                 ))}

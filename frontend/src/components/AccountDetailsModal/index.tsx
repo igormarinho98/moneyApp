@@ -5,7 +5,7 @@ import EventNoteIcon from '@mui/icons-material/EventNote';
 interface AccountDetailsModalProps {
     open: boolean;
     onClose: () => void;
-    account: IAccount | null;
+    account?: IAccount | null;
 }
 
 const AccountDetailsModal: React.FC<AccountDetailsModalProps> = ({ open, onClose, account }) => {
