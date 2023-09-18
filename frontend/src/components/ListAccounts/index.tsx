@@ -54,20 +54,22 @@ const ListAccount = () => {
               <div >
                 <li className={styles.main} key={dado._id as any}>
  
-             
-                  <p>
-                    <Chip label="Agencia :" color="success" variant="outlined" /> {dado.agency}
-                  </p>
-                  <p key={dado.account_number}>
-                    <Chip label="Conta :" color="success" variant="outlined" />
-                    {dado.account_number}</p>
 
                 
                   <p key={dado.user_id} className={styles.linha}>
-                    <Chip label=" User ID : " color="primary" variant="outlined" />
+                    <Chip label=" User ID : " color="primary" variant="filled" />
 
                     {dado.user_id}</p>
+             
+                  <p>
+                    <Chip label="Agencia :" color="success" variant="filled" /> {dado.agency}
+                  </p>
+                  <p key={dado.account_number}>
+                    <Chip label="Conta :" color="success" variant="filled" />
+                    {dado.account_number}</p>
+                    <br></br>
                   <li> <Button color="warning" variant="contained" onClick={() => handleOpen(dado)}>Detalhes</Button></li>
+                 
                  
 
 
