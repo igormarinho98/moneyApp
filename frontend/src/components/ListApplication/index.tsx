@@ -117,18 +117,14 @@ const ListApplication = () => {
                     R$ {item.investmentAmount}
                         </h3>                    
                  
-                                     <Button className="btn-form" color="warning" variant="contained" onClick={() => handleOpen(item)}>Detalhes
-                                        <FeedIcon>
-
-                                        </FeedIcon>
-                                    </Button>
+                                     
                 </Card>
                 <Card sx={{ minWidth: 200, paddingLeft: 3, paddingBottom: 6 }}>
                 <Chip label="Moeda" color="success" variant="filled" />
 
                     
                     <h3 style={{fontFamily: 'Arial', fontSize:22, paddingLeft: 3, paddingBottom: 6, border: 6}}>
-                    R$ {item.currency}
+                     {item.currency}
                         </h3>                    
                                        <Button className="btn-form" color="warning" variant="contained" onClick={() => handleOpen(item)}>Detalhes
                                         <FeedIcon>
