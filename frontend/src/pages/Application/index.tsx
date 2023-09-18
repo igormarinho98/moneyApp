@@ -3,7 +3,7 @@ import ListApplication from "../../components/ListApplication";
 import NavBar from "../../components/Navbar";
 import styles from "./Application.module.scss"
 import { Link, Paper, Button } from "@mui/material";
-
+import PublishedWithChangesIcon from '@mui/icons-material/PublishedWithChanges';
 interface AppProps {
   app?: IApp
 }
@@ -16,8 +16,8 @@ const Application = () => {
           href="/application/create"
         >
     <Button variant="contained">
-          
           Investir
+          <PublishedWithChangesIcon/>
       </Button>
         </Link>
       <div className={styles.header}>

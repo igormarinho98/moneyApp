@@ -8,7 +8,7 @@ import TurnedInIcon from '@mui/icons-material/TurnedIn';
 import IApp from "../../interfaces/IApp";
 import styles from "./ListApplication.module.scss";
 import AppDetailsModal from "../AppDetailsModal";
-
+import BarChartIcon from '@mui/icons-material/BarChart';
 
 const url = 'https://moneyapp.onrender.com/application';
 
@@ -50,7 +50,10 @@ const ListApplication = () => {
                     <Grid container spacing={2}>
                         <CardContent>
                             <Card className={styles.cardApp}>
-                                <h2 className="mt-2"> {item.type}</h2>
+                                <h2 className="mt-2">
+                                <BarChartIcon sx={{fontSize: 35, color: "green"}} />
+                                     {item.type}
+                                     </h2>
 
                                 <div className={styles.main} >
 
@@ -66,17 +69,17 @@ const ListApplication = () => {
 
                                     </h4>
 
-                                    <TurnedInIcon color="action"/>
+                                    <TurnedInIcon sx={{fontSize: 40 }} color="action"/>
  
                                     {item.flag_redemption ? (
                                         // Se item.flag_redemption for verdadeiro, exibir um ícone e texto diferente
                                         <div className={styles.outroStatus}>
-                                            <DoneAllIcon style={{ color: "green" }} /> RESGATADO
+                                            <DoneAllIcon style={{fontSize: 40, color: "green" }} /> RESGATADO
                                         </div>
                                     ) : (
                                         // Se item.flag_redemption não for verdadeiro, exibir INVESTIDO
                                         <div className={styles.investido}>
-                                            <AttachMoneyIcon style={{ color: "red" }} /> INVESTIDO
+                                            <AttachMoneyIcon style={{fontSize: 40, color: "red" }} /> INVESTIDO
                                         </div>
                                     )}
 
