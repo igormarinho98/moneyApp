@@ -1,7 +1,6 @@
 import IAccount from "../../interfaces/IAccount";
 import NavBar from "../Navbar";
 import styles from "./Account.module.scss";
-import CreateAccount from "../../pages/CreateAccount/index";
 import { Card, CardContent, Paper, Button, Link } from "@mui/material";
 
 interface AccountProps {

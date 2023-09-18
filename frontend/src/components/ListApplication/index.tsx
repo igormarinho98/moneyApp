@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Button, Card, CardContent, Divider, Chip, Grid, Dialog, DialogActions, DialogContent, DialogTitle } from "@mui/material";
+import { Button, Card, CardContent, Divider, Chip, Grid, Dialog, DialogActions, DialogContent, DialogTitle, Paper } from "@mui/material";
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import DoneAllIcon from '@mui/icons-material/DoneAll';
 import FeedIcon from '@mui/icons-material/Feed';
@@ -9,7 +9,7 @@ import IApp from "../../interfaces/IApp";
 import styles from "./ListApplication.module.scss";
 import AppDetailsModal from "../AppDetailsModal";
 import BarChartIcon from '@mui/icons-material/BarChart';
-
+import LocalAtmIcon from '@mui/icons-material/LocalAtm';
 const url = 'https://moneyapp.onrender.com/application';
 
 const ListApplication = () => {
@@ -19,7 +19,7 @@ const ListApplication = () => {
     const [selectedApplication, setSelectedApplication] = useState<IApp | null>(null);
 
 
-
+ 
     const handleOpen = (application: IApp) => {
         setSelectedApplication(application);
     };
@@ -40,10 +40,15 @@ const ListApplication = () => {
     }, [applications])
 
 
+     
+
+
     return (
 
         <>
             {applications.map(item => (
+                <div>
+
                 <Card sx={{ minWidth: 200 }} color="text-secondary">
 
 
@@ -74,12 +79,19 @@ const ListApplication = () => {
                                     {item.flag_redemption ? (
                                         // Se item.flag_redemption for verdadeiro, exibir um ícone e texto diferente
                                         <div className={styles.outroStatus}>
+                                             
+
+
                                             <DoneAllIcon style={{fontSize: 40, color: "green" }} /> RESGATADO
+                                             
+                                            
                                         </div>
                                     ) : (
-                                        // Se item.flag_redemption não for verdadeiro, exibir INVESTIDO
-                                        <div className={styles.investido}>
+                                         <div className={styles.investido}>
+                                           
+                                                
                                             <AttachMoneyIcon style={{fontSize: 40, color: "red" }} /> INVESTIDO
+                                                 
                                         </div>
                                     )}
 
@@ -99,11 +111,23 @@ const ListApplication = () => {
 
                         </CardContent>
                     </Grid>
-                    <Divider style={{ background: 'black' }} variant="middle" />
 
                 </Card>
+                <Card>
+                <Chip label="Valor do Investimento" color="success" variant="filled" />
 
-            ))}
+                    
+                    <h3 style={{fontFamily: 'Arial', fontSize:22, paddingLeft: 3, paddingBottom: 6, border: 6}}>
+                    R$ {item.investmentAmount}
+                        </h3>                    
+                 
+                    <LocalAtmIcon sx={{fontSize:45 }}/>
+                </Card>
+                                    <Divider style={{ background: 'black' }} variant="middle" />
+
+            </div>
+                ))}
+
 
             <AppDetailsModal open={selectedApplication !== null} onClose={handleClose} application={selectedApplication} />
 
