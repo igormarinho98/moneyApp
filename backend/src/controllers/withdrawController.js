@@ -14,43 +14,47 @@ class WithdrawController {
 
   static withdrawInvestment = async (req, res) => {
     const { id } = req.body;
-    
+
     try {
-       const withdraw = await Application.findById(id);
+      const withdraw = await Application.findById(id);
 
       const agency = withdraw.agency;
       const account_number = withdraw.account_number;
 
       const account = await Account.findOne({ agency, account_number }).exec();
-      
+
+      if (withdraw.flag_redemption) {
+        return res.status(500).send({ message: "Withdraw Done yet!." })
+      } 
+
       withdraw.flag_redemption = true;
 
       await withdraw.save();
-
-
-
+      
+      
       if (!withdraw) {
         return res.status(404).send({ message: 'Application not found' });
       }
-
+      
       if (!account) {
         return res.status(404).send({ message: 'Account not found' });
       }
+       
+        account.balance += withdraw.investmentAmount;
+        
+        await account.save();
       
-      account.balance += withdraw.investmentAmount;
-  
-       await account.save();
-  
+
       const newWithdraw = new Withdraw({
         agency: agency,
         account_number: account_number,
         currency: 'BRL',
         type: 'WITHDRAW',
-        investmentAmount:withdraw.investmentAmount 
+        investmentAmount: withdraw.investmentAmount
       });
-  
+
       await newWithdraw.save();
-  
+
       return res.status(200).send({ message: 'Withdraw successful', newWithdraw });
     } catch (err) {
       return res.status(500).send({ message: err.message });
@@ -61,7 +65,7 @@ class WithdrawController {
     const agency = req.body.agency;
     const account_number = req.body.account_number;
     try {
-      const data = await Withdraw.find({agency:agency, account_number: account_number, });
+      const data = await Withdraw.find({ agency: agency, account_number: account_number, });
       if (data) {
         res.status(200).send(data.toJSON());
       } else {
