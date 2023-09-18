@@ -62,14 +62,13 @@ class WithdrawController {
   };
 
   static listById = async (req, res) => {
-    const agency = req.body.agency;
-    const account_number = req.body.account_number;
+    const id = req.params.id;
     try {
-      const data = await Withdraw.find({ agency: agency, account_number: account_number, });
+      const data = await Withdraw.findById(id);
       if (data) {
         res.status(200).send(data.toJSON());
       } else {
-        res.status(404).send({ message: 'Resgate não Efetivada' });
+        res.status(404).send({ message: 'Resgate não encontrado' });
       }
     } catch (err) {
       res.status(500).send({ message: err.message });
