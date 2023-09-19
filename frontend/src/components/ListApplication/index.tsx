@@ -11,7 +11,6 @@ import AppDetailsModal from "../AppDetailsModal";
 import BarChartIcon from '@mui/icons-material/BarChart';
 import WithdrawValues from "../WithdrawValues";
 const url = 'https://moneyapp.onrender.com/application';
-
 const ListApplication = () => {
 
     const [applications, setApplications] = useState<IApp[]>([]);
@@ -60,7 +59,7 @@ const ListApplication = () => {
                 <div>
 
  
-                <Card sx={{ minWidth: 200, paddingLeft: 3, paddingBottom: 6, paddingTop: 6 }} color="text-secondary">
+                <Card sx={{backgroundColor: "#F8F8FF	", minWidth: 200, paddingLeft: 3, paddingBottom: 6, paddingTop: 6 }} color="text-secondary">
 
 
                     <Grid container spacing={2}>
@@ -119,7 +118,7 @@ const ListApplication = () => {
                     </Grid>
 
                 </Card>
-                <Card sx={{ minWidth: 200, paddingLeft: 3, paddingBottom: 6 }}>
+                <Card sx={{backgroundColor: "#F8F8FF", minWidth: 200, paddingLeft: 3, paddingBottom: 6 }}>
                 <Chip label="Valor do Investimento" color="success" variant="filled" />
 
                     
@@ -129,24 +128,19 @@ const ListApplication = () => {
                  
                                      
                 </Card>
-                <Card sx={{ minWidth: 200, paddingLeft: 3, paddingBottom: 6 }}>
+                <Card sx={{backgroundColor: "#F8F8FF", minWidth: 200, paddingLeft: 3, paddingBottom: 6 }}>
                 <Chip label="Moeda" color="success" variant="filled" />
 
                     
                     <h3 style={{fontFamily: 'Arial', fontSize:22, paddingLeft: 3, paddingBottom: 6, border: 6}}>
                      {item.currency}
                         </h3>                    
-                                       <Button className="btn-form" color="warning" variant="contained" onClick={() => handleOpen(item)}>Detalhes
-                                        <FeedIcon>
-
-                                        </FeedIcon>
-                                    </Button>
+                                    
                 </Card>
-
-                <Card sx={{ minWidth: 200, paddingLeft: 3, paddingBottom: 6 }}>
+                
+                <Card sx={{backgroundColor: "#F8F8FF", minWidth: 200, paddingLeft: 3, paddingBottom: 6 }}>
                 <Chip label="Projeção de resgate" color="success" variant="filled" />
-
-
+ 
                         <h3 style={{fontFamily: 'Arial', fontSize:22, paddingLeft: 3, paddingBottom: 6, border: 6}}>
                   1 Mês: R$  {item.investmentAmount !== undefined && item.rentability !== undefined
   ? item.investmentAmount * item.rentability 
@@ -159,7 +153,13 @@ const ListApplication = () => {
   : "Valores não disponíveis"}
                         </h3>  
                                       
+                <Button className="btn-form" color="warning" variant="contained" onClick={() => handleOpen(item)}>Detalhes
+                                        <FeedIcon>
+
+                                        </FeedIcon>
+                                    </Button>
                 </Card>
+
                 <WithdrawValues />
 
                                      <Divider style={{ background: 'black' }} variant="middle" />
