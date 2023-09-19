@@ -6,14 +6,14 @@ import DoneAllIcon from '@mui/icons-material/DoneAll';
 import FeedIcon from '@mui/icons-material/Feed';
 import TurnedInIcon from '@mui/icons-material/TurnedIn';
 import IApp from "../../interfaces/IApp";
-import styles from "./ListApplication.module.scss";
+import styles from "./ListPendingApplication.module.scss";
 import AppDetailsModal from "../AppDetailsModal";
 import BarChartIcon from '@mui/icons-material/BarChart';
 import WithdrawValues from "../WithdrawValues";
-const url = 'https://moneyapp.onrender.com/application';
+const url = 'https://moneyapp.onrender.com/applicationPending';
 
 const urlWithdraw = 'https://moneyapp.onrender.com/withdraw';
-const ListApplication = () => {
+const ListPendingApplication = () => {
 
     const [applications, setApplications] = useState<IApp[]>([]);
 
@@ -191,4 +191,4 @@ const ListApplication = () => {
 
 }
 
-export default ListApplication;
+export default ListPendingApplication;

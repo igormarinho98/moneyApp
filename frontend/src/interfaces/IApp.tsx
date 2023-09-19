@@ -14,6 +14,6 @@ export default interface IApp {
     expiration?: boolean;
     expiration_date?: string;
     __v?: number;
-};
+ };
 
 

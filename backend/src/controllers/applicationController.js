@@ -10,6 +10,16 @@ class ApplicationController {
     }
   };
 
+
+  static listPendingApp = async (req, res) => {
+    try {
+      const data = await Application.find({flag_redemption: false});
+      res.status(200).json(data);
+    } catch (err) {
+      res.status(500).send({ message: `${err.message} - erro ao listar aplicações!` });
+    }
+  };
+
   static createApp = async (req, res) => {
     try {
       const app = new Application(req.body);
