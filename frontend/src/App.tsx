@@ -8,6 +8,7 @@ import Application from './pages/Application';
 import CreateAccount from './pages/CreateAccount';
 import CreateUser from './components/CreateUser';
 import CreateApplication from './pages/CreateApplication';
+import WithdrawInvestment from './components/WithdrawInvestment';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <Route path="/user" element={ <User/>}></Route>
       <Route path="/application" element={ <Application/>}></Route>
       <Route path="/application/create" element={<CreateApplication/>}></Route>
+      <Route path="/application/withdraw" element={<WithdrawInvestment/>}></Route>
      </Routes>
    );
 }
