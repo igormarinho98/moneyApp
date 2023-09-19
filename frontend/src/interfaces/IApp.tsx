@@ -7,6 +7,7 @@ export default interface IApp {
     account_number?:string;
     type?: string;
     investmentAmount?: number;
+    rentability?:number;
     currency?: string;
     flag_redemption?: false;
     applicated_at?: string;

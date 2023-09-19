@@ -36,6 +36,7 @@
     applicated_at: {type: Date, default: Date.now},
     type: {type: String, required:true, default: `${tipoCDBAleatorio} ${numCDBAleatorio} ++`},
     investmentAmount: {type: Number, required: true },
+    rentability: {type: Number, required: true, default: 1.25 },
     currency: {type: String, required: true, default: 'BRL'},
     expiration: {type: Boolean, default: false},
     expiration_date: {type: Date, default: Date.now},

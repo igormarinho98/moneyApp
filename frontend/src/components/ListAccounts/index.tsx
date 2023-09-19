@@ -49,7 +49,7 @@ const ListAccount = () => {
 
       <ul>
         {accounts.map(dado => (
-          <Card sx={{ minWidth: 275 }} color="text-secondary"  >
+          <Card sx={{ minWidth: 200, paddingLeft: 3, paddingBottom: 6, paddingTop: 6 }} color="text-secondary"  >
             <CardContent>
               <div >
                 <li className={styles.main} key={dado._id as any}>

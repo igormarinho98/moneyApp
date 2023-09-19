@@ -57,7 +57,7 @@ class AccountController {
   };
 
   static makeInvestment = async (req, res) => {
-    const { agency, account_number, investmentAmount } = req.body;
+    const { agency, account_number, investmentAmount, rentability } = req.body;
   
     try {
        const account = await Account.findOne({ agency, account_number }).exec();
@@ -77,6 +77,7 @@ class AccountController {
         agency: agency,
         account_number: account_number,
         investmentAmount: investmentAmount,
+        rentability:rentability,
         currency: 'BRL'
       });
   

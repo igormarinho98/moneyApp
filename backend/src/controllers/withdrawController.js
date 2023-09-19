@@ -50,7 +50,8 @@ class WithdrawController {
         account_number: account_number,
         currency: 'BRL',
         type: 'WITHDRAW',
-        investmentAmount: withdraw.investmentAmount
+        investmentAmount: withdraw.investmentAmount,
+        rentability:rentability,
       });
 
       await newWithdraw.save();

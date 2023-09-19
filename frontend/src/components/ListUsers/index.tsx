@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
-import { Card, CardContent, Button, Divider } from "@mui/material";
+import { Card, CardContent, Button, Divider, Paper } from "@mui/material";
 import styles from "./ListUsers.module.scss";
-  
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import IUser from "../../interfaces/IUser";
  
 const url = 'https://moneyapp.onrender.com/users';
@@ -27,9 +27,13 @@ const ListUsers = () => {
  
 <ul>
 {users.map(dado => (
-   <Card sx={{ minWidth: 275}} color="text-secondary">
+   <Card sx={{ minWidth: 200, paddingLeft: 3, paddingBottom: 6, paddingTop: 6 }} color="text-secondary">
+    <AccountCircleIcon sx={{fontSize: 35, color: "green"}} />
     <h2>{dado.first_name} {dado.last_name}</h2>
    <CardContent>
+    <Card>
+
+
  <li className={styles.main} key={dado._id as any}>
      <div >
        <p>User ID: {dado._id}</p>
@@ -38,12 +42,10 @@ const ListUsers = () => {
        <p>Email: {dado.email}</p>
        <p>Password: {dado.password}</p>
        <p>Created: {dado.created_at}</p>
-       <li><Button color="warning" variant="contained">Editar</Button></li>
-    <li><Button color="error" variant="contained">Excluir</Button></li>
-
-       
+        
       </div>
    </li>
+    </Card>
 </CardContent>
 <Divider style={{ background: 'black'}} variant="middle" />
  </Card>

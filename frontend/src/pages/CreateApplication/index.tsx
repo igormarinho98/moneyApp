@@ -15,6 +15,9 @@ const CreateApplication = () => {
     const [agency, setAgency] = useState('');
     const [account_number, setAccountNumber] = useState('');
     const [investmentAmount, setInvestmentAmount] = useState('');
+    const [rentability, setRentability] = useState('');
+
+
 
     const handleSubmit = async (event: any) => {
         event.preventDefault();
@@ -24,11 +27,12 @@ const CreateApplication = () => {
                 agency: agency,
                 account_number: account_number,
                 investmentAmount: investmentAmount,
+                rentability: rentability
             };
 
             const response = await axios.post(url, data);
             console.log(response.data)
-            alert(`Aplicação Realizada! Agencia ${data.agency} Conta${data.account_number}Valor R$ ${data.investmentAmount}`)
+            alert(`Aplicação Realizada! Agencia ${data.agency} Conta${data.account_number}Valor R$ ${data.investmentAmount} Taxa ${data.rentability} `)
             redirect('/')
         } catch (error) {
             console.error(error)
@@ -97,6 +101,17 @@ const CreateApplication = () => {
                                 variant="outlined" />
 
                         </Grid>
+
+                        <Grid item xs={8}>
+                            <TextField
+                                value={rentability}
+                                onChange={(e) => setRentability(e.target.value)}
+                                id="filled-basic"
+                                label="Taxa do Investimento"
+                                variant="outlined" />
+
+                        </Grid>
+
 
 
 

@@ -17,16 +17,22 @@ const ListApplication = () => {
     const [applications, setApplications] = useState<IApp[]>([]);
 
     const [selectedApplication, setSelectedApplication] = useState<IApp | null>(null);
-
-
+ 
+    
  
     const handleOpen = (application: IApp) => {
         setSelectedApplication(application);
+ 
     };
+
+     
 
     const handleClose = () => {
         setSelectedApplication(null);
     };
+
+     
+
 
     useEffect(() => {
         axios
@@ -47,6 +53,10 @@ const ListApplication = () => {
 
         <>
             {applications.map(item => (
+
+                
+
+
                 <div>
 
  
@@ -132,7 +142,25 @@ const ListApplication = () => {
                                         </FeedIcon>
                                     </Button>
                 </Card>
-                <WithdrawValues/>
+
+                <Card sx={{ minWidth: 200, paddingLeft: 3, paddingBottom: 6 }}>
+                <Chip label="Projeção de resgate" color="success" variant="filled" />
+
+
+                        <h3 style={{fontFamily: 'Arial', fontSize:22, paddingLeft: 3, paddingBottom: 6, border: 6}}>
+                  1 Mês: R$  {item.investmentAmount !== undefined && item.rentability !== undefined
+  ? item.investmentAmount * item.rentability 
+  : "Valores não disponíveis"}
+                        </h3>                    
+                    
+                    <h3 style={{fontFamily: 'Arial', fontSize:22, paddingLeft: 3, paddingBottom: 6, border: 6}}>
+                  6 Meses: R$  {item.investmentAmount !== undefined && item.rentability !== undefined
+  ? item.investmentAmount * item.rentability * 6
+  : "Valores não disponíveis"}
+                        </h3>  
+                                      
+                </Card>
+                <WithdrawValues />
 
                                      <Divider style={{ background: 'black' }} variant="middle" />
 
