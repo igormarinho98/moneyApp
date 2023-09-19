@@ -20,6 +20,7 @@ class WithdrawController {
 
       const agency = withdraw.agency;
       const account_number = withdraw.account_number;
+      const rentability = withdraw.rentability;
 
       const account = await Account.findOne({ agency, account_number }).exec();
 
