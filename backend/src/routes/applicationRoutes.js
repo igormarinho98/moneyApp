@@ -6,6 +6,7 @@
     router
         .get("/application", ApplicationController.listApp)
         .get("/applicationPending", ApplicationController.listPendingApp)
+        .get("/applicationByAccount", ApplicationController.listAppByAccount)
         .get("/application/:id", ApplicationController.listById)
         .post("/application", ApplicationController.createApp)
 

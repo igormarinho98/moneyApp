@@ -20,6 +20,18 @@ class ApplicationController {
     }
   };
 
+  static listAppByAccount = async (req, res) => {
+    const account = req.body.accountNumber;
+    const agency = req.body.agency;
+
+    try {
+      const data = await Application.find({account_number: account, agency: agency}).exec();
+      res.status(200).json(data);
+    } catch (err) {
+      res.status(500).send({ message: `${err.message} - erro ao listar aplicações!` });
+    }
+  };
+
   static createApp = async (req, res) => {
     try {
       const app = new Application(req.body);

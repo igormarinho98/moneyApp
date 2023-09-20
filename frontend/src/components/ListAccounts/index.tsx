@@ -18,14 +18,19 @@ const url = 'https://moneyapp.onrender.com/account';
 const ListAccount = () => {
   const [accounts, setAccounts] = useState<IAccount[]>([]);
   const [selectedAccount, setSelectedAccount] = useState<IAccount | null>(null);
+ 
+
 
   const handleOpen = (account: IAccount) => {
     setSelectedAccount(account);
+ 
   };
 
   const handleClose = () => {
     setSelectedAccount(null);
   };
+
+   
 
   useEffect(() => {
     axios.get(url)
@@ -43,21 +48,21 @@ const ListAccount = () => {
         <Table sx={{minWidth: 650 }} size="small" aria-label="tabela de contas">
           <TableHead>
             <TableRow >
-              <TableCell sx={{fontSize: 16, fontFamily: "sans-serif"}}>ID Usuário</TableCell>
-              <TableCell sx={{fontSize: 16}}>Agencia</TableCell>
-              <TableCell sx={{fontSize: 16}}>Conta</TableCell>
-              <TableCell sx={{fontSize: 16}}>Saldo</TableCell>
-              <TableCell sx={{fontSize: 16}}>Ver mais</TableCell>
+              <TableCell sx={{backgroundColor: "#D3D3D3	",fontSize: 16, fontFamily: "sans-serif"}}>ID Usuário</TableCell>
+              <TableCell sx={{backgroundColor: "#D3D3D3	",fontSize: 16}}>Agencia</TableCell>
+              <TableCell sx={{backgroundColor: "#D3D3D3	",fontSize: 16}}>Conta</TableCell>
+              <TableCell sx={{backgroundColor: "#D3D3D3		",fontSize: 16}}>Saldo</TableCell>
+              <TableCell sx={{backgroundColor: "#D3D3D3		",fontSize: 16}}>Ver mais</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
             {accounts.map((dado) => (
               <TableRow key={dado._id as any}>
-                <TableCell sx={{fontSize: 16}}>{dado.user_id}</TableCell>
-                <TableCell sx={{fontSize: 16}}>{dado.agency}</TableCell>
-                <TableCell sx={{fontSize: 16}}>{dado.account_number}</TableCell>
-                <TableCell sx={{fontSize: 16}}>R${dado.balance} </TableCell>
-                <TableCell sx={{fontSize: 16}}>
+                <TableCell sx={{backgroundColor: "#F8F8FF	",fontSize: 16}}>{dado.user_id}</TableCell>
+                <TableCell sx={{backgroundColor: "#F8F8FF	",fontSize: 16}}>{dado.agency}</TableCell>
+                <TableCell sx={{backgroundColor: "#F8F8FF	",fontSize: 16}}>{dado.account_number}</TableCell>
+                <TableCell sx={{backgroundColor: "#F8F8FF	",fontSize: 16}}>R${dado.balance} </TableCell>
+                <TableCell sx={{backgroundColor: "#F8F8FF	",fontSize: 16}}>
                   <Button color="warning" variant="contained" onClick={() => handleOpen(dado)}>Detalhes</Button>
                 </TableCell>
               </TableRow>
