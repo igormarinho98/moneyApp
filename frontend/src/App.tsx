@@ -10,6 +10,7 @@ import CreateUser from './components/CreateUser';
 import CreateApplication from './pages/CreateApplication';
 import WithdrawInvestment from './components/WithdrawInvestment';
 import ListPendingApplication from './components/ListPendingApplication';
+import MyTable from './components/MyTable';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <Route path="/account/create" element={ <CreateAccount/>}></Route>
       <Route path="/user/create" element={ <CreateUser/>}></Route>
       <Route path="/user" element={ <User/>}></Route>
+      <Route path="/table" element={ <MyTable/>}></Route>
       <Route path="/application" element={ <Application/>}></Route>
       <Route path="/applicationp" element={ <ListPendingApplication/>}></Route>
       <Route path="/application/create" element={<CreateApplication/>}></Route>

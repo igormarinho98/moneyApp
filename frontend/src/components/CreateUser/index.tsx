@@ -30,6 +30,7 @@ const CreateUser = () => {
 
             const response = await axios.post(url, data);
             console.log(response.data)
+            alert(`Usuário:${data.username}`)
 
         } catch (error) {
             console.log(error)
@@ -108,7 +109,7 @@ const CreateUser = () => {
                             <TextField
                                 value={createdAt}
                                 onChange={(e) => setCreatedAt(e.target.value)}
-                                type="text"
+                                type="hidden"
                                 label="Criado em"
                                 variant="outlined" />
 

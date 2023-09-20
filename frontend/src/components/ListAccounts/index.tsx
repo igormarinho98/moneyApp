@@ -3,24 +3,22 @@ import axios from "axios";
 import Card from '@mui/material/Card';
 import Button from "@mui/material/Button";
 import styles from "./ListAccounts.module.scss";
-
-
 import IAccount from "../../interfaces/IAccount";
 import { CardContent, Divider, Chip } from "@mui/material";
 import AccountDetailsModal from "../AccountDetailsModal";
+import TableContainer from '@mui/material/TableContainer';
+import Table from '@mui/material/Table';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import TableCell from '@mui/material/TableCell';
+import TableBody from '@mui/material/TableBody';
 
 const url = 'https://moneyapp.onrender.com/account';
 
-
-
-
 const ListAccount = () => {
-
   const [accounts, setAccounts] = useState<IAccount[]>([]);
   const [selectedAccount, setSelectedAccount] = useState<IAccount | null>(null);
 
-
- 
   const handleOpen = (account: IAccount) => {
     setSelectedAccount(account);
   };
@@ -28,7 +26,6 @@ const ListAccount = () => {
   const handleClose = () => {
     setSelectedAccount(null);
   };
-
 
   useEffect(() => {
     axios.get(url)
@@ -38,55 +35,40 @@ const ListAccount = () => {
       .catch(err => {
         console.log(err)
       })
-
   }, [accounts]);
 
   return (
-    <div>
-
-
-
-
-      <ul>
-        {accounts.map(dado => (
-          <Card sx={{ minWidth: 200, paddingLeft: 3, paddingBottom: 6, paddingTop: 6 }} color="text-secondary"  >
-            <CardContent>
-              <div >
-                <li className={styles.main} key={dado._id as any}>
- 
-
-                
-                  <p key={dado.user_id} className={styles.linha}>
-                    <Chip label=" User ID : " color="primary" variant="filled" />
-
-                    {dado.user_id}</p>
-             
-                  <p>
-                    <Chip label="Agencia :" color="success" variant="filled" /> {dado.agency}
-                  </p>
-                  <p key={dado.account_number}>
-                    <Chip label="Conta :" color="success" variant="filled" />
-                    {dado.account_number}</p>
-                    <br></br>
-                  <li> <Button color="warning" variant="contained" onClick={() => handleOpen(dado)}>Detalhes</Button></li>
-                 
-                 
-
-
-                </li>
-              </div>
-
-            </CardContent>
-            <Divider style={{ background: 'black' }} variant="middle" />
-          </Card>
-        ))}
-      </ul>
+    <div >
+      <TableContainer component={Card}>
+        <Table sx={{minWidth: 650 }} size="small" aria-label="tabela de contas">
+          <TableHead>
+            <TableRow >
+              <TableCell sx={{fontSize: 16, fontFamily: "sans-serif"}}>ID Usuário</TableCell>
+              <TableCell sx={{fontSize: 16}}>Agencia</TableCell>
+              <TableCell sx={{fontSize: 16}}>Conta</TableCell>
+              <TableCell sx={{fontSize: 16}}>Saldo</TableCell>
+              <TableCell sx={{fontSize: 16}}>Ver mais</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {accounts.map((dado) => (
+              <TableRow key={dado._id as any}>
+                <TableCell sx={{fontSize: 16}}>{dado.user_id}</TableCell>
+                <TableCell sx={{fontSize: 16}}>{dado.agency}</TableCell>
+                <TableCell sx={{fontSize: 16}}>{dado.account_number}</TableCell>
+                <TableCell sx={{fontSize: 16}}>R${dado.balance} </TableCell>
+                <TableCell sx={{fontSize: 16}}>
+                  <Button color="warning" variant="contained" onClick={() => handleOpen(dado)}>Detalhes</Button>
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+      <Divider style={{ background: 'black' }} variant="middle" />
       <AccountDetailsModal open={selectedAccount !== null} onClose={handleClose} account={selectedAccount} />
     </div>
   );
-
 }
-
-
 
 export default ListAccount;
