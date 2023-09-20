@@ -10,6 +10,9 @@ import styles from "./ListPendingApplication.module.scss";
 import AppDetailsModal from "../AppDetailsModal";
 import BarChartIcon from '@mui/icons-material/BarChart';
 import WithdrawValues from "../WithdrawValues";
+import NavBar from "../Navbar";
+import CheckIcon from '@mui/icons-material/Check';
+
 const url = 'https://moneyapp.onrender.com/applicationPending';
 
 const urlWithdraw = 'https://moneyapp.onrender.com/withdraw';
@@ -26,7 +29,7 @@ const ListPendingApplication = () => {
 
     };
 
-    
+
     const handleWithdraw = async (appId: string) => {
         try {
             const data = { id: appId };
@@ -37,15 +40,15 @@ const ListPendingApplication = () => {
             console.error(error);
         }
     };
-    
-    
+
+
     const handleClose = () => {
         setSelectedApplication(null);
     };
-    
-    
-     
-    
+
+
+
+
 
 
     useEffect(() => {
@@ -66,6 +69,7 @@ const ListPendingApplication = () => {
     return (
 
         <>
+            <NavBar></NavBar>
             {applications.map(item => (
 
 
@@ -101,25 +105,12 @@ const ListPendingApplication = () => {
 
                                         <TurnedInIcon sx={{ fontSize: 40 }} color="action" />
 
-                                        {item.flag_redemption ? (
-                                            // Se item.flag_redemption for verdadeiro, exibir um ícone e texto diferente
-                                            <div className={styles.outroStatus}>
 
 
 
-                                                <DoneAllIcon style={{ fontSize: 40, color: "green" }} /> RESGATADO
+                                        <AttachMoneyIcon style={{ fontSize: 40, color: "red" }} /> INVESTIDO
 
 
-                                            </div>
-                                        ) : (
-                                            <div className={styles.investido}>
-
-
-                                                <AttachMoneyIcon style={{ fontSize: 40, color: "red" }} /> INVESTIDO
-                                                <Button  onClick={() => item._id && handleWithdraw(item._id)} style={{ fontSize: 22, paddingTop: 10, marginTop: 10 }} variant="contained">Resgatar  </Button>
-
-                                            </div>
-                                        )}
 
                                     </div>
                                     <li>
@@ -170,9 +161,17 @@ const ListPendingApplication = () => {
                         </h3>
 
                         <Button className="btn-form" color="warning" variant="contained" onClick={() => handleOpen(item)}>Detalhes
+
                             <FeedIcon>
 
                             </FeedIcon>
+                        </Button>
+
+
+                        <Button onClick={() => item._id && handleWithdraw(item._id)} color="success" style={{ fontSize: 14, marginLeft: 25 }} variant="contained">Resgatar
+                            <CheckIcon>
+
+                            </CheckIcon>
                         </Button>
                     </Card>
 

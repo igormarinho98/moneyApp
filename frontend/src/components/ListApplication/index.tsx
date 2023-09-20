@@ -10,6 +10,7 @@ import styles from "./ListApplication.module.scss";
 import AppDetailsModal from "../AppDetailsModal";
 import BarChartIcon from '@mui/icons-material/BarChart';
 import WithdrawValues from "../WithdrawValues";
+import CheckIcon from '@mui/icons-material/Check';
 const url = 'https://moneyapp.onrender.com/application';
 
 const urlWithdraw = 'https://moneyapp.onrender.com/withdraw';
@@ -26,7 +27,7 @@ const ListApplication = () => {
 
     };
 
-    
+
     const handleWithdraw = async (appId: string) => {
         try {
             const data = { id: appId };
@@ -37,15 +38,15 @@ const ListApplication = () => {
             console.error(error);
         }
     };
-    
-    
+
+
     const handleClose = () => {
         setSelectedApplication(null);
     };
-    
-    
-     
-    
+
+
+
+
 
 
     useEffect(() => {
@@ -116,9 +117,18 @@ const ListApplication = () => {
 
 
                                                 <AttachMoneyIcon style={{ fontSize: 40, color: "red" }} /> INVESTIDO
-                                                <Button  onClick={() => item._id && handleWithdraw(item._id)} style={{ fontSize: 22, paddingTop: 10, marginTop: 10 }} variant="contained">Resgatar  </Button>
+
+                                                <Button onClick={() => item._id && handleWithdraw(item._id)} color="success" style={{ fontSize: 14, marginLeft: 25 }} variant="contained">
+                                                    <CheckIcon>
+
+                                                    </CheckIcon>
+                                                    Resgatar
+                                                </Button>
 
                                             </div>
+
+
+
                                         )}
 
                                     </div>
@@ -174,6 +184,8 @@ const ListApplication = () => {
 
                             </FeedIcon>
                         </Button>
+
+
                     </Card>
 
                     <WithdrawValues />

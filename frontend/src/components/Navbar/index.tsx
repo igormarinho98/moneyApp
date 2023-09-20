@@ -19,7 +19,11 @@ const NavBar = () => {
           Gestão de Usuários
         </Link>
         <Link underline="hover" color="inherit" href="/application">
-          Aplicações
+          Todas Aplicações
+        </Link>
+
+        <Link underline="hover" color="inherit" href="/applicationp">
+          Aplicações Pendentes
         </Link>
       </Breadcrumbs>
       <h2 className={styles["navbar-title"]}>Sistema de Conta Corrente</h2>
