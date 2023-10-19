@@ -11,8 +11,10 @@ import CreateApplication from './pages/CreateApplication';
 import WithdrawInvestment from './components/WithdrawInvestment';
 import ListPendingApplication from './components/ListPendingApplication';
 import MyTable from './components/MyTable';
-
+import ListAcountApplication from './components/ListAcountApplication';
+ 
 function App() {
+ 
   return (
     
      <Routes>
@@ -24,6 +26,7 @@ function App() {
       <Route path="/table" element={ <MyTable/>}></Route>
       <Route path="/application" element={ <Application/>}></Route>
       <Route path="/applicationp" element={ <ListPendingApplication/>}></Route>
+      <Route path="/application/:id" element={ <ListAcountApplication/>}></Route>
       <Route path="/application/create" element={<CreateApplication/>}></Route>
       <Route path="/application/withdraw" element={<WithdrawInvestment/>}></Route>
      </Routes>

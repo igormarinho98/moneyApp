@@ -18,13 +18,11 @@ const url = 'https://moneyapp.onrender.com/account';
 const ListAccount = () => {
   const [accounts, setAccounts] = useState<IAccount[]>([]);
   const [selectedAccount, setSelectedAccount] = useState<IAccount | null>(null);
- 
-
+  const [accountApplications, setAccountApplications] = useState([]); // Novo estado para as aplicações
 
   const handleOpen = (account: IAccount) => {
     setSelectedAccount(account);
- 
-  };
+    };
 
   const handleClose = () => {
     setSelectedAccount(null);
@@ -35,12 +33,12 @@ const ListAccount = () => {
   useEffect(() => {
     axios.get(url)
       .then(response => {
-        setAccounts(response.data)
+        setAccounts(response.data);
       })
       .catch(err => {
-        console.log(err)
-      })
-  }, [accounts]);
+        console.log(err);
+      });
+  }, [accounts]); 
 
   return (
     <div >
@@ -72,6 +70,8 @@ const ListAccount = () => {
       </TableContainer>
       <Divider style={{ background: 'black' }} variant="middle" />
       <AccountDetailsModal open={selectedAccount !== null} onClose={handleClose} account={selectedAccount} />
+      
+       
     </div>
   );
 }

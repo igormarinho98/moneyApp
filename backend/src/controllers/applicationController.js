@@ -1,3 +1,4 @@
+import Account from "../models/Account.js";
 import Application from "../models/Application.js";
 
 class ApplicationController {
@@ -19,6 +20,20 @@ class ApplicationController {
       res.status(500).send({ message: `${err.message} - erro ao listar aplicações!` });
     }
   };
+
+  
+  static listAccountApps = async (req, res) => {
+    const accountNumber = req.body.accountNumber;
+    try {
+      const data = await Application.find({account_number: accountNumber});
+      res.status(200).json(data);
+    } catch (err) {
+      res.status(500).send({ message: `${err.message} - erro ao listar aplicações!` });
+    }
+  };
+
+  
+
 
   static listAppByAccount = async (req, res) => {
     const account = req.body.accountNumber;

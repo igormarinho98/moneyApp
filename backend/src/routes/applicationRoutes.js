@@ -8,7 +8,8 @@
         .get("/applicationPending", ApplicationController.listPendingApp)
         .get("/applicationByAccount", ApplicationController.listAppByAccount)
         .get("/application/:id", ApplicationController.listById)
+        .get("/application/ApplicationAcc", ApplicationController.listAccountApps)
         .post("/application", ApplicationController.createApp)
 
 
-        export default router;  
+        export default router;      

@@ -1,5 +1,6 @@
 import Account from "../models/Account.js";
 import Application from "../models/Application.js";
+import mongoose from "mongoose";
  
 class AccountController {
   static listAccount = async (req, res) => {
@@ -49,7 +50,9 @@ class AccountController {
   static listApplicationByAccountId = async (req, res) => {
     const id = req.params.id;
     try {
-      const data = await Application.findById({account_id: id});
+      const accountId = mongoose.Types.ObjectId(id);
+      console.log(accountId);
+      const data = await Application.findById({account_id: accountId});
       res.status(200).json(data);
     } catch (err) {
       res.status(500).send({ message: `${err.message} - falha ao listar aplicacoes!` });
