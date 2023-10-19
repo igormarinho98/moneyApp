@@ -166,18 +166,7 @@ const ListApplication = () => {
 
                     <Card sx={{ backgroundColor: "#F8F8FF", minWidth: 200, paddingLeft: 3, paddingBottom: 6 }}>
                         <Chip label="Projeção de resgate" color="success" variant="filled" />
-
-                        <h3 style={{ fontFamily: 'Arial', fontSize: 22, paddingLeft: 3, paddingBottom: 6, border: 6 }}>
-                            1 Mês: R$  {item.investmentAmount !== undefined && item.rentability !== undefined
-                                ? item.investmentAmount * item.rentability
-                                : "Valores não disponíveis"}
-                        </h3>
-
-                        <h3 style={{ fontFamily: 'Arial', fontSize: 22, paddingLeft: 3, paddingBottom: 6, border: 6 }}>
-                            6 Meses: R$  {item.investmentAmount !== undefined && item.rentability !== undefined
-                                ? item.investmentAmount * item.rentability * 6
-                                : "Valores não disponíveis"}
-                        </h3>
+ 
 
                         <Button className="btn-form" color="warning" variant="contained" onClick={() => handleOpen(item)}>Detalhes
                             <FeedIcon>
